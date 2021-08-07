@@ -23,6 +23,7 @@
 		7F531AFB26BF27B8002106E2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF126BF27B8002106E2 /* Result.swift */; };
 		7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */; };
 		7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */; };
+		7F531B0E26BF32D8002106E2 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531B0D26BF32D8002106E2 /* AppTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		7F531AF126BF27B8002106E2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		7F531B0D26BF32D8002106E2 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppTabBar.swift; path = ../../../../AppTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		7F531B0126BF28B2002106E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F531B0D26BF32D8002106E2 /* AppTabBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F531AF826BF27B8002106E2 /* URLRequester.swift in Sources */,
+				7F531B0E26BF32D8002106E2 /* AppTabBar.swift in Sources */,
 				7F531AF526BF27B8002106E2 /* RequestParams.swift in Sources */,
 				7F531AD926BF2403002106E2 /* ViewController.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
