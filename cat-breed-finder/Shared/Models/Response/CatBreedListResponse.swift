@@ -7,17 +7,14 @@
 
 import Foundation
 
-struct CatBreedListResponse: Codable {
-    
-    let items: [CatBreed]
-}
+typealias CatBreedListResponse = [CatBreed]
 
 struct CatBreed: Codable {
     
     let adaptability: Int
     let affectionLevel: Int
-    let altNames: String
-    let cfaURL: String
+    let altNames: String?
+    let cfaURL: String?
     let childFriendly: Int
     let countryCode: String
     let countryCodes: String
@@ -25,21 +22,23 @@ struct CatBreed: Codable {
     let dogFriendly, energyLevel, experimental, grooming: Int
     let hairless, healthIssues, hypoallergenic: Int
     let id: String
-    let image: CatImage
-    let indoor, intelligence, lap: Int
+    let image: CatImage?
+    let indoor: Int
+    let intelligence: Int
+    let lap: Int?
     let lifeSpan, name: String
     let natural: Int
     let origin: String
     let rare: Int
-    let referenceImageID: String
+    let referenceImageID: String?
     let rex, sheddingLevel, shortLegs, socialNeeds: Int
     let strangerFriendly, suppressedTail: Int
     let temperament: String
-    let vcahospitalsURL: String
-    let vetstreetURL: String
+    let vcahospitalsURL: String?
+    let vetstreetURL: String?
     let vocalisation: Int
     let weight: CatWeight
-    let wikipediaURL: String
+    let wikipediaURL: String?
 
     enum CodingKeys: String, CodingKey {
         
@@ -76,10 +75,10 @@ struct CatBreed: Codable {
 // MARK: - Image
 struct CatImage: Codable {
     
-    let height: Int
-    let id: String
-    let url: String
-    let width: Int
+    let height: Int?
+    let id: String?
+    let url: String?
+    let width: Int?
 }
 
 

@@ -16,6 +16,7 @@ final class CenterButtonTabBar: UITabBar {
         button.layer.cornerRadius = button.frame.size.width / 2.0
         button.setImage(buttonImage, for: .normal)
         button.tintColor = UIColor.white
+        button.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -112,7 +113,6 @@ final class CenterButtonTabBar: UITabBar {
                                     width: centerButtonHeight,
                                     height: centerButtonHeight)
         addSubview(centerButton)
-        centerButton.addTarget(self, action: #selector(centerButtonAction), for: .touchUpInside)
     }
     
     @objc func centerButtonAction(sender: UIButton) {

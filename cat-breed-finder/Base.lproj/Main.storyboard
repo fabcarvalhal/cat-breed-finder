@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Breed List View Controller-->
         <scene sceneID="Yq5-nJ-oEN">
             <objects>
-                <viewController id="kYP-5y-SuI" sceneMemberID="viewController">
+                <viewController id="kYP-5y-SuI" customClass="BreedListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Jf-Pn-MKk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -39,7 +39,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="O2T-Z6-9RW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yfm-qZ-q8h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ykf-qm-2WF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -171,7 +171,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eTf-p7-eY9"/>
+        <segue reference="3f6-Cw-8Sr"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="button" width="50" height="50"/>
