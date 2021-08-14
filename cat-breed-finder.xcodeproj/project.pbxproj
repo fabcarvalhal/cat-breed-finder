@@ -10,6 +10,11 @@
 		7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */; };
 		7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21026C84C0B001652C2 /* TabBarController.swift */; };
 		7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21526C8538A001652C2 /* CatFinderViewController.swift */; };
+		7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21B26C8599C001652C2 /* CatBreedListResponse.swift */; };
+		7F13F22026C85C28001652C2 /* CatBreedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21F26C85C28001652C2 /* CatBreedListRequest.swift */; };
+		7F13F22326C85C62001652C2 /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */; };
+		7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22626C85CE7001652C2 /* TheCatApiClient.swift */; };
+		7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22A26C85DAA001652C2 /* TheCatApiEndpoint.swift */; };
 		7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD426BF2403002106E2 /* AppDelegate.swift */; };
 		7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD626BF2403002106E2 /* SceneDelegate.swift */; };
 		7F531AD926BF2403002106E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD826BF2403002106E2 /* ViewController.swift */; };
@@ -32,6 +37,11 @@
 		7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButtonTabBar.swift; sourceTree = "<group>"; };
 		7F13F21026C84C0B001652C2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7F13F21526C8538A001652C2 /* CatFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFinderViewController.swift; sourceTree = "<group>"; };
+		7F13F21B26C8599C001652C2 /* CatBreedListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedListResponse.swift; sourceTree = "<group>"; };
+		7F13F21F26C85C28001652C2 /* CatBreedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedListRequest.swift; sourceTree = "<group>"; };
+		7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
+		7F13F22626C85CE7001652C2 /* TheCatApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCatApiClient.swift; sourceTree = "<group>"; };
+		7F13F22A26C85DAA001652C2 /* TheCatApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCatApiEndpoint.swift; sourceTree = "<group>"; };
 		7F531AD126BF2403002106E2 /* cat-breed-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-breed-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F531AD426BF2403002106E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F531AD626BF2403002106E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +89,39 @@
 			path = CatFinder;
 			sourceTree = "<group>";
 		};
+		7F13F21926C858DB001652C2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				7F13F21F26C85C28001652C2 /* CatBreedListRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		7F13F21A26C858E3001652C2 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				7F13F21B26C8599C001652C2 /* CatBreedListResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		7F13F22526C85CD3001652C2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7F531AEC26BF27B7002106E2 /* BaseApiClient.swift */,
+				7F531AF026BF27B8002106E2 /* ContentType.swift */,
+				7F531AEA26BF27B7002106E2 /* Endpoint.swift */,
+				7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */,
+				7F531AEF26BF27B8002106E2 /* HTTPMethod.swift */,
+				7F531AEB26BF27B7002106E2 /* RequestParams.swift */,
+				7F531AF126BF27B8002106E2 /* Result.swift */,
+				7F531AED26BF27B7002106E2 /* SimpleJSONHandler.swift */,
+				7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */,
+				7F531AEE26BF27B7002106E2 /* URLRequester.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		7F531AC826BF2403002106E2 = {
 			isa = PBXGroup;
 			children = (
@@ -113,16 +156,9 @@
 		7F531AE926BF277F002106E2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7F531AEC26BF27B7002106E2 /* BaseApiClient.swift */,
-				7F531AF026BF27B8002106E2 /* ContentType.swift */,
-				7F531AEA26BF27B7002106E2 /* Endpoint.swift */,
-				7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */,
-				7F531AEF26BF27B8002106E2 /* HTTPMethod.swift */,
-				7F531AEB26BF27B7002106E2 /* RequestParams.swift */,
-				7F531AF126BF27B8002106E2 /* Result.swift */,
-				7F531AED26BF27B7002106E2 /* SimpleJSONHandler.swift */,
-				7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */,
-				7F531AEE26BF27B7002106E2 /* URLRequester.swift */,
+				7F13F22526C85CD3001652C2 /* Base */,
+				7F13F22626C85CE7001652C2 /* TheCatApiClient.swift */,
+				7F13F22A26C85DAA001652C2 /* TheCatApiEndpoint.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -142,6 +178,7 @@
 		7F531B0026BF28AC002106E2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -157,6 +194,8 @@
 		7F531B0226BF28C9002106E2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F13F21A26C858E3001652C2 /* Response */,
+				7F13F21926C858DB001652C2 /* Request */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,10 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F13F22326C85C62001652C2 /* DictionaryConvertible.swift in Sources */,
 				7F531AF826BF27B8002106E2 /* URLRequester.swift in Sources */,
+				7F13F22026C85C28001652C2 /* CatBreedListRequest.swift in Sources */,
 				7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */,
 				7F531AF526BF27B8002106E2 /* RequestParams.swift in Sources */,
 				7F531AD926BF2403002106E2 /* ViewController.swift in Sources */,
+				7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
 				7F531AF426BF27B8002106E2 /* Endpoint.swift in Sources */,
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
@@ -267,6 +309,8 @@
 				7F531AFA26BF27B8002106E2 /* ContentType.swift in Sources */,
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
 				7F531AF626BF27B8002106E2 /* BaseApiClient.swift in Sources */,
+				7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */,
+				7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */,
 				7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */,
 				7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */,
 				7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */,
