@@ -16,19 +16,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5X-C5-c9P">
-                                <rect key="frame" x="223" y="352" width="46" height="167"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="O2T-Z6-9RW" kind="show" id="3f6-Cw-8Sr"/>
-                                </connections>
-                            </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by breed name" translatesAutoresizingMaskIntoConstraints="NO" id="LUt-2V-BBp">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-JS-c0J">
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lk1-Pk-po7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lk1-Pk-po7" firstAttribute="bottom" secondItem="AmF-JS-c0J" secondAttribute="bottom" id="2Jc-VY-Llj"/>
+                            <constraint firstItem="lk1-Pk-po7" firstAttribute="trailing" secondItem="AmF-JS-c0J" secondAttribute="trailing" id="CAw-Ih-y9x"/>
+                            <constraint firstItem="AmF-JS-c0J" firstAttribute="leading" secondItem="lk1-Pk-po7" secondAttribute="leading" id="IZU-zJ-Qko"/>
+                            <constraint firstItem="LUt-2V-BBp" firstAttribute="top" secondItem="lk1-Pk-po7" secondAttribute="top" id="MWi-ON-6ia"/>
+                            <constraint firstItem="LUt-2V-BBp" firstAttribute="leading" secondItem="lk1-Pk-po7" secondAttribute="leading" id="ScC-Ap-FOS"/>
+                            <constraint firstItem="AmF-JS-c0J" firstAttribute="top" secondItem="LUt-2V-BBp" secondAttribute="bottom" id="csg-vA-wFt"/>
+                            <constraint firstItem="LUt-2V-BBp" firstAttribute="trailing" secondItem="lk1-Pk-po7" secondAttribute="trailing" id="q7m-kl-2gE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KOf-kb-7js"/>
+                    <connections>
+                        <outlet property="searchBar" destination="LUt-2V-BBp" id="Kgm-si-vCn"/>
+                        <outlet property="tableView" destination="AmF-JS-c0J" id="1DP-qf-oeG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpB-DA-dhk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,7 +52,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="O2T-Z6-9RW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yfm-qZ-q8h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="ykf-qm-2WF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -171,7 +184,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="3f6-Cw-8Sr"/>
+        <segue reference="eTf-p7-eY9"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="button" width="50" height="50"/>

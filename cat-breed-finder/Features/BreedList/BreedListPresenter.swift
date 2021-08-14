@@ -19,7 +19,7 @@ final class BreedListPresenter: BreedListPresenterInterface {
     
     private let theCatApiClient = TheCatApiClient()
     
-    private weak var view: BreedListViewControllerInterface?
+    weak var view: BreedListViewControllerInterface?
     private var breedQuery: String = String()
     private let breedListLimit = 50
     private var currentPage = Int.zero
@@ -40,17 +40,19 @@ final class BreedListPresenter: BreedListPresenterInterface {
         view?.changeState(to: .loading)
         let request = CatBreedListRequest(page: currentPage, limit: breedListLimit)
         theCatApiClient.getBreeds(request: request) { [weak self] result in
-            switch result {
-            case .success(let response):
-                self?.hasMorePages = response.count == self?.breedListLimit
-                self?.breedList = response
-                guard !response.isEmpty else {
+            self?.runOnMainTread {
+                switch result {
+                case .success(let response):
+                    self?.hasMorePages = response.count == self?.breedListLimit
+                    self?.breedList = response
+                    guard !response.isEmpty else {
+                        self?.view?.changeState(to: .done)
+                        return
+                    }
                     self?.view?.changeState(to: .done)
-                    return
+                case .failure(let error):
+                    self?.view?.changeState(to: .error(message: error.localizedDescription))
                 }
-                self?.view?.changeState(to: .done)
-            case .failure(let error):
-                self?.view?.changeState(to: .error(message: error.localizedDescription))
             }
         }
     }
@@ -60,21 +62,36 @@ final class BreedListPresenter: BreedListPresenterInterface {
         let request = CatBreedListRequest(page: currentPage + 1, limit: breedListLimit)
         theCatApiClient.getBreeds(request: request) { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .success(let response):
-                self.hasMorePages = response.count == self.breedListLimit
-                self.currentPage += 1
-                self.breedList = response
-                self.view?.changeState(to: .done)
-            case .failure(let error):
-                self.view?.changeState(to: .error(message: error.localizedDescription))
+            self.runOnMainTread {
+                switch result {
+                case .success(let response):
+                    self.hasMorePages = response.count == self.breedListLimit
+                    self.currentPage += 1
+                    self.breedList = response
+                    self.view?.changeState(to: .done)
+                case .failure(let error):
+                    self.view?.changeState(to: .error(message: error.localizedDescription))
+                }
             }
         }
     }
     
     func searchBreed(by name: String) {
-        view?.changeState(to: .loading)
         breedQuery = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !breedOutput.isEmpty else {
+            view?.changeState(to: .empty)
+            return
+        }
         view?.changeState(to: .done)
+    }
+    
+    private func runOnMainTread(_ work: @escaping () -> Void) {
+        if Thread.isMainThread {
+            work()
+        } else {
+            DispatchQueue.main.async {
+                work()
+            }
+        }
     }
 }
