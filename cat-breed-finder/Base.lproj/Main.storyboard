@@ -19,10 +19,18 @@
                             <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by breed name" translatesAutoresizingMaskIntoConstraints="NO" id="LUt-2V-BBp">
                                 <rect key="frame" x="0.0" y="88" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kYP-5y-SuI" id="VHo-Qv-LPe"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-JS-c0J">
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="kYP-5y-SuI" id="Zu1-Sg-bfL"/>
+                                    <outlet property="delegate" destination="kYP-5y-SuI" id="qIb-Bb-0oe"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lk1-Pk-po7"/>

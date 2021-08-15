@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol BreedListViewControllerInterface: AnyObject {
     
@@ -14,7 +15,13 @@ protocol BreedListViewControllerInterface: AnyObject {
 
 final class BreedListViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView.register(UINib(nibName: "CatBreedCell", bundle: Bundle.main),
+                               forCellReuseIdentifier: CatBreedCell.identifier)
+            tableView.estimatedRowHeight = 120
+        }
+    }
     @IBOutlet weak var searchBar: UISearchBar! 
     
     enum BreedListState {
@@ -33,6 +40,10 @@ final class BreedListViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenter.loadBreeds()
     }
 }
@@ -48,10 +59,20 @@ extension BreedListViewController: BreedListViewControllerInterface {
             displayLoading()
         case .empty:
             hideLoading()
+            tableView.reloadData()
             print("show empty state")
         case .error(let message):
             hideLoading()
             print(message)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let contentOffsetMaxY: Float = Float(scrollView.contentOffset.y + scrollView.bounds.size.height)
+        let contentHeight: Float = Float(scrollView.contentSize.height)
+        let lastCellIsVisible = contentOffsetMaxY > contentHeight - 100
+        if lastCellIsVisible {
+            presenter.loadMore()
         }
     }
 }
@@ -65,13 +86,27 @@ extension BreedListViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         presenter.searchBreed(by: searchBar.text ?? String())
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter.searchBreed(by: searchText)
     }
 }
 
 extension BreedListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return .init()
+        let cell = tableView.dequeueReusableCell(withIdentifier: CatBreedCell.identifier, for: indexPath)
+        guard let breedCell = cell as? CatBreedCell else { return cell }
+        let item = presenter.breedOutput[indexPath.row]
+        let imageUrl = item.image?.url ?? ""
+        breedCell
+            .catImageView
+            .sd_setImage(with: URL(string: imageUrl),
+                         placeholderImage: UIImage(named: "placeholder"))
+        breedCell.titleLabel.text = item.name
+        return breedCell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

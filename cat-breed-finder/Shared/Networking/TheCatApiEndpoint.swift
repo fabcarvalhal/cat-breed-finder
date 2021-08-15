@@ -24,6 +24,6 @@ enum TheCatApiEndpoint: Endpoint {
     }
     
     var headers: [String : Any] {
-        [:]
+        [HTTPHeaderField.xAPIKey.rawValue: "e7cd03bf-b0d4-4d53-9236-4ff96a5b2936"]
     }
 }

@@ -44,6 +44,7 @@ final class CenterButtonTabBar: UITabBar {
     private var shapeLayer: CALayer?
     
     override func draw(_ rect: CGRect) {
+        backgroundColor = .clear
         addShape()
         setupCenterButton()
     }

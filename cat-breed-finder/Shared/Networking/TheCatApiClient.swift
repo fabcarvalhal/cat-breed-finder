@@ -22,6 +22,7 @@ final class TheCatApiClient: BaseApiClient, TheCatApiClientProtocol {
         do {
             let request = try URLRequestBuilder(with: endpoint.baseUrl)
                 .set(path: endpoint.path)
+                .set(headers: endpoint.headers)
                 .set(method: endpoint.method)
                 .set(params: .query(request.toDictionary()))
                 .build()

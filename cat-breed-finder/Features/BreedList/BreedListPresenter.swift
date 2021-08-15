@@ -12,6 +12,7 @@ protocol BreedListPresenterInterface: AnyObject {
     var breedOutput: [CatBreed] { get }
     
     func loadBreeds()
+    func loadMore()
     func searchBreed(by name: String)
 }
 
@@ -21,7 +22,7 @@ final class BreedListPresenter: BreedListPresenterInterface {
     
     weak var view: BreedListViewControllerInterface?
     private var breedQuery: String = String()
-    private let breedListLimit = 50
+    private let breedListLimit = 10
     private var currentPage = Int.zero
     private var hasMorePages = true
     private var isLoading = false
@@ -37,9 +38,12 @@ final class BreedListPresenter: BreedListPresenterInterface {
     
     func loadBreeds() {
         guard !isLoading else  { return }
+        breedQuery = ""
+        isLoading = true
         view?.changeState(to: .loading)
         let request = CatBreedListRequest(page: currentPage, limit: breedListLimit)
         theCatApiClient.getBreeds(request: request) { [weak self] result in
+            self?.isLoading = false
             self?.runOnMainTread {
                 switch result {
                 case .success(let response):
@@ -58,16 +62,19 @@ final class BreedListPresenter: BreedListPresenterInterface {
     }
     
     func loadMore() {
-        guard !isLoading else  { return }
+        guard !isLoading && breedQuery.isEmpty && hasMorePages else  { return }
+        isLoading = true
         let request = CatBreedListRequest(page: currentPage + 1, limit: breedListLimit)
         theCatApiClient.getBreeds(request: request) { [weak self] result in
             guard let self = self else { return }
+            self.isLoading = false
             self.runOnMainTread {
                 switch result {
                 case .success(let response):
+                    print("AQUIIIIII", response.count)
                     self.hasMorePages = response.count == self.breedListLimit
                     self.currentPage += 1
-                    self.breedList = response
+                    self.breedList += response
                     self.view?.changeState(to: .done)
                 case .failure(let error):
                     self.view?.changeState(to: .error(message: error.localizedDescription))

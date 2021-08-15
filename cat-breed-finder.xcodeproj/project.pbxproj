@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,9 @@
 		7F13F22F26C8623C001652C2 /* BreedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22E26C8623C001652C2 /* BreedListViewController.swift */; };
 		7F13F23226C862A5001652C2 /* BreedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F23126C862A5001652C2 /* BreedListPresenter.swift */; };
 		7F13F23526C869CE001652C2 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F23426C869CE001652C2 /* UIViewController+Loading.swift */; };
+		7F4BAA7A26C887D60047F127 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7F4BAA7926C887D60047F127 /* SDWebImage */; };
+		7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BAA7F26C89BA50047F127 /* CatBreedCell.swift */; };
+		7F4BAA8326C89E780047F127 /* CatBreedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4BAA8226C89E770047F127 /* CatBreedCell.xib */; };
 		7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD426BF2403002106E2 /* AppDelegate.swift */; };
 		7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD626BF2403002106E2 /* SceneDelegate.swift */; };
 		7F531AD926BF2403002106E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD826BF2403002106E2 /* ViewController.swift */; };
@@ -48,6 +51,8 @@
 		7F13F22E26C8623C001652C2 /* BreedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewController.swift; sourceTree = "<group>"; };
 		7F13F23126C862A5001652C2 /* BreedListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListPresenter.swift; sourceTree = "<group>"; };
 		7F13F23426C869CE001652C2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
+		7F4BAA7F26C89BA50047F127 /* CatBreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedCell.swift; sourceTree = "<group>"; };
+		7F4BAA8226C89E770047F127 /* CatBreedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatBreedCell.xib; sourceTree = "<group>"; };
 		7F531AD126BF2403002106E2 /* cat-breed-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-breed-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F531AD426BF2403002106E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F531AD626BF2403002106E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4BAA7A26C887D60047F127 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +141,15 @@
 				7F13F23126C862A5001652C2 /* BreedListPresenter.swift */,
 			);
 			path = BreedList;
+			sourceTree = "<group>";
+		};
+		7F4BAA7E26C89B960047F127 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7F4BAA7F26C89BA50047F127 /* CatBreedCell.swift */,
+				7F4BAA8226C89E770047F127 /* CatBreedCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		7F531AC826BF2403002106E2 = {
@@ -202,6 +217,7 @@
 		7F531B0126BF28B2002106E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F4BAA7E26C89B960047F127 /* Cells */,
 				7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */,
 			);
 			path = Views;
@@ -258,6 +274,9 @@
 			dependencies = (
 			);
 			name = "cat-breed-finder";
+			packageProductDependencies = (
+				7F4BAA7926C887D60047F127 /* SDWebImage */,
+			);
 			productName = "cat-breed-finder";
 			productReference = 7F531AD126BF2403002106E2 /* cat-breed-finder.app */;
 			productType = "com.apple.product-type.application";
@@ -285,6 +304,9 @@
 				Base,
 			);
 			mainGroup = 7F531AC826BF2403002106E2;
+			packageReferences = (
+				7F4BAA7826C887D60047F127 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 7F531AD226BF2403002106E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -302,6 +324,7 @@
 				7F531AE126BF2404002106E2 /* LaunchScreen.storyboard in Resources */,
 				7F531ADE26BF2404002106E2 /* Assets.xcassets in Resources */,
 				7F531ADC26BF2403002106E2 /* Main.storyboard in Resources */,
+				7F4BAA8326C89E780047F127 /* CatBreedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +346,7 @@
 				7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
 				7F531AF426BF27B8002106E2 /* Endpoint.swift in Sources */,
+				7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */,
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
 				7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */,
 				7F531AFA26BF27B8002106E2 /* ContentType.swift in Sources */,
@@ -537,6 +561,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F4BAA7826C887D60047F127 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F4BAA7926C887D60047F127 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F4BAA7826C887D60047F127 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F531AC926BF2403002106E2 /* Project object */;
 }
