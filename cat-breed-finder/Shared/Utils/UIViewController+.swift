@@ -20,6 +20,7 @@ extension UIViewController {
     }
     
     func hideLoading() {
+        guard presentedViewController is UIAlertController else { return }
         presentedViewController?.dismiss(animated: true, completion: nil)
     }
     

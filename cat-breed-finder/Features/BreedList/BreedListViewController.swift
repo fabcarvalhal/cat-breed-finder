@@ -22,6 +22,16 @@ final class BreedListViewController: UIViewController {
             tableView.estimatedRowHeight = 120
         }
     }
+    
+    private lazy var searchController: UISearchController = {
+        let controller = UISearchController(searchResultsController: nil)
+        controller.searchResultsUpdater = self
+        controller.delegate = self
+        controller.obscuresBackgroundDuringPresentation = false
+        controller.searchBar.placeholder = "Search by breed name"
+        return controller
+    }()
+    
     @IBOutlet weak var searchBar: UISearchBar! 
     
     enum BreedListState {
@@ -37,6 +47,11 @@ final class BreedListViewController: UIViewController {
         presenter.view = self
         return presenter
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.searchController = searchController
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -72,23 +87,6 @@ extension BreedListViewController: BreedListViewControllerInterface {
     }
 }
 
-extension BreedListViewController: UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = nil
-        presenter.searchBreed(by: String())
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        presenter.searchBreed(by: searchBar.text ?? String())
-        view.endEditing(true)
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        presenter.searchBreed(by: searchText)
-    }
-}
-
 extension BreedListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -113,5 +111,16 @@ extension BreedListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension BreedListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        presenter.searchBreed(by: searchController.searchBar.text ?? String())
+    }
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        presenter.searchBreed(by: String())
     }
 }

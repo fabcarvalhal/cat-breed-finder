@@ -8,23 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Breed List View Controller-->
+        <!--Breeds-->
         <scene sceneID="Yq5-nJ-oEN">
             <objects>
                 <viewController id="kYP-5y-SuI" customClass="BreedListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8Jf-Pn-MKk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search by breed name" translatesAutoresizingMaskIntoConstraints="NO" id="LUt-2V-BBp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="kYP-5y-SuI" id="VHo-Qv-LPe"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AmF-JS-c0J">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
@@ -39,15 +32,11 @@
                             <constraint firstItem="lk1-Pk-po7" firstAttribute="bottom" secondItem="AmF-JS-c0J" secondAttribute="bottom" id="2Jc-VY-Llj"/>
                             <constraint firstItem="lk1-Pk-po7" firstAttribute="trailing" secondItem="AmF-JS-c0J" secondAttribute="trailing" id="CAw-Ih-y9x"/>
                             <constraint firstItem="AmF-JS-c0J" firstAttribute="leading" secondItem="lk1-Pk-po7" secondAttribute="leading" id="IZU-zJ-Qko"/>
-                            <constraint firstItem="LUt-2V-BBp" firstAttribute="top" secondItem="lk1-Pk-po7" secondAttribute="top" id="MWi-ON-6ia"/>
-                            <constraint firstItem="LUt-2V-BBp" firstAttribute="leading" secondItem="lk1-Pk-po7" secondAttribute="leading" id="ScC-Ap-FOS"/>
-                            <constraint firstItem="AmF-JS-c0J" firstAttribute="top" secondItem="LUt-2V-BBp" secondAttribute="bottom" id="csg-vA-wFt"/>
-                            <constraint firstItem="LUt-2V-BBp" firstAttribute="trailing" secondItem="lk1-Pk-po7" secondAttribute="trailing" id="q7m-kl-2gE"/>
+                            <constraint firstItem="AmF-JS-c0J" firstAttribute="top" secondItem="lk1-Pk-po7" secondAttribute="top" id="fVk-6P-Y9u"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="KOf-kb-7js"/>
+                    <navigationItem key="navigationItem" title="Breeds" largeTitleDisplayMode="always" id="KOf-kb-7js"/>
                     <connections>
-                        <outlet property="searchBar" destination="LUt-2V-BBp" id="Kgm-si-vCn"/>
                         <outlet property="tableView" destination="AmF-JS-c0J" id="1DP-qf-oeG"/>
                     </connections>
                 </viewController>
@@ -82,6 +71,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="image" keyPath="buttonImage" value="button"/>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tabbarColor">
+                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
@@ -118,7 +110,7 @@
             <objects>
                 <viewController id="wh8-bW-2bc" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6W4-nx-rdk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="jog-0p-QWN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -132,17 +124,25 @@
             </objects>
             <point key="canvasLocation" x="1684.057971014493" y="963.61607142857133"/>
         </scene>
-        <!--Item-->
+        <!--Breeds-->
         <scene sceneID="5Kn-Kb-pH8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NxX-Ay-ngB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="vpf-hW-ZcZ">
+                    <tabBarItem key="tabBarItem" title="Breeds" image="list.dash" catalog="system" selectedImage="list.dash" id="vpf-hW-ZcZ">
                         <inset key="landscapeImageInsets" minX="15" minY="15" maxX="0.0" maxY="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f6U-2S-ljh">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="f6U-2S-ljh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -171,15 +171,16 @@
             </objects>
             <point key="canvasLocation" x="775" y="128"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="bct-iQ-3VR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioo-mZ-WfR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="07T-Yx-Ptb"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="07T-Yx-Ptb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jys-IH-urp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jys-IH-urp">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -196,6 +197,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="button" width="50" height="50"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

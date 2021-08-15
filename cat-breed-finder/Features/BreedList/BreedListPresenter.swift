@@ -71,7 +71,6 @@ final class BreedListPresenter: BreedListPresenterInterface {
             self.runOnMainTread {
                 switch result {
                 case .success(let response):
-                    print("AQUIIIIII", response.count)
                     self.hasMorePages = response.count == self.breedListLimit
                     self.currentPage += 1
                     self.breedList += response
