@@ -17,13 +17,12 @@
 		7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22A26C85DAA001652C2 /* TheCatApiEndpoint.swift */; };
 		7F13F22F26C8623C001652C2 /* BreedListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22E26C8623C001652C2 /* BreedListViewController.swift */; };
 		7F13F23226C862A5001652C2 /* BreedListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F23126C862A5001652C2 /* BreedListPresenter.swift */; };
-		7F13F23526C869CE001652C2 /* UIViewController+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F23426C869CE001652C2 /* UIViewController+Loading.swift */; };
+		7F13F23526C869CE001652C2 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F23426C869CE001652C2 /* UIViewController+.swift */; };
 		7F4BAA7A26C887D60047F127 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7F4BAA7926C887D60047F127 /* SDWebImage */; };
 		7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4BAA7F26C89BA50047F127 /* CatBreedCell.swift */; };
 		7F4BAA8326C89E780047F127 /* CatBreedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F4BAA8226C89E770047F127 /* CatBreedCell.xib */; };
 		7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD426BF2403002106E2 /* AppDelegate.swift */; };
 		7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD626BF2403002106E2 /* SceneDelegate.swift */; };
-		7F531AD926BF2403002106E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AD826BF2403002106E2 /* ViewController.swift */; };
 		7F531ADC26BF2403002106E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F531ADA26BF2403002106E2 /* Main.storyboard */; };
 		7F531ADE26BF2404002106E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F531ADD26BF2404002106E2 /* Assets.xcassets */; };
 		7F531AE126BF2404002106E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F531ADF26BF2404002106E2 /* LaunchScreen.storyboard */; };
@@ -50,13 +49,12 @@
 		7F13F22A26C85DAA001652C2 /* TheCatApiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCatApiEndpoint.swift; sourceTree = "<group>"; };
 		7F13F22E26C8623C001652C2 /* BreedListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListViewController.swift; sourceTree = "<group>"; };
 		7F13F23126C862A5001652C2 /* BreedListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListPresenter.swift; sourceTree = "<group>"; };
-		7F13F23426C869CE001652C2 /* UIViewController+Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Loading.swift"; sourceTree = "<group>"; };
+		7F13F23426C869CE001652C2 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		7F4BAA7F26C89BA50047F127 /* CatBreedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedCell.swift; sourceTree = "<group>"; };
 		7F4BAA8226C89E770047F127 /* CatBreedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatBreedCell.xib; sourceTree = "<group>"; };
 		7F531AD126BF2403002106E2 /* cat-breed-finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cat-breed-finder.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F531AD426BF2403002106E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F531AD626BF2403002106E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7F531AD826BF2403002106E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F531ADB26BF2403002106E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F531ADD26BF2404002106E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F531AE026BF2404002106E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				7F531AFF26BF282C002106E2 /* Shared */,
 				7F531AD426BF2403002106E2 /* AppDelegate.swift */,
 				7F531AD626BF2403002106E2 /* SceneDelegate.swift */,
-				7F531AD826BF2403002106E2 /* ViewController.swift */,
 				7F531ADA26BF2403002106E2 /* Main.storyboard */,
 				7F531ADF26BF2404002106E2 /* LaunchScreen.storyboard */,
 			);
@@ -209,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */,
-				7F13F23426C869CE001652C2 /* UIViewController+Loading.swift */,
+				7F13F23426C869CE001652C2 /* UIViewController+.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				7F13F22F26C8623C001652C2 /* BreedListViewController.swift in Sources */,
 				7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */,
 				7F531AF526BF27B8002106E2 /* RequestParams.swift in Sources */,
-				7F531AD926BF2403002106E2 /* ViewController.swift in Sources */,
 				7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
 				7F531AF426BF27B8002106E2 /* Endpoint.swift in Sources */,
@@ -351,7 +347,7 @@
 				7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */,
 				7F531AFA26BF27B8002106E2 /* ContentType.swift in Sources */,
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
-				7F13F23526C869CE001652C2 /* UIViewController+Loading.swift in Sources */,
+				7F13F23526C869CE001652C2 /* UIViewController+.swift in Sources */,
 				7F531AF626BF27B8002106E2 /* BaseApiClient.swift in Sources */,
 				7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */,
 				7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */,

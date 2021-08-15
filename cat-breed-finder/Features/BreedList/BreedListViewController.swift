@@ -37,10 +37,6 @@ final class BreedListViewController: UIViewController {
         presenter.view = self
         return presenter
     }()
- 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -60,10 +56,9 @@ extension BreedListViewController: BreedListViewControllerInterface {
         case .empty:
             hideLoading()
             tableView.reloadData()
-            print("show empty state")
         case .error(let message):
             hideLoading()
-            print(message)
+            showErrorAlert(message: message, title: "Error")
         }
     }
     

@@ -1,5 +1,5 @@
 //
-//  UIView+ActivityIndicator.swift
+//  UIViewController+.swift
 //  cat-breed-finder
 //
 //  Created by Fabrício Silva Carvalhal on 14/08/21.
@@ -21,5 +21,11 @@ extension UIViewController {
     
     func hideLoading() {
         presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    func showErrorAlert(message: String, title: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
