@@ -37,6 +37,8 @@
 		7F531AFB26BF27B8002106E2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF126BF27B8002106E2 /* Result.swift */; };
 		7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */; };
 		7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */; };
+		7F78868926CA1FB0002B5C04 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868826CA1FB0002B5C04 /* RealmSwift */; };
+		7F78868B26CA1FB0002B5C04 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868A26CA1FB0002B5C04 /* Realm */; };
 		7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */; };
 		7FCAAB7E26C9FB9300A84349 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCAAB7D26C9FB9300A84349 /* BarView.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F78868B26CA1FB0002B5C04 /* Realm in Frameworks */,
+				7F78868926CA1FB0002B5C04 /* RealmSwift in Frameworks */,
 				7F4BAA7A26C887D60047F127 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +310,8 @@
 			name = "cat-breed-finder";
 			packageProductDependencies = (
 				7F4BAA7926C887D60047F127 /* SDWebImage */,
+				7F78868826CA1FB0002B5C04 /* RealmSwift */,
+				7F78868A26CA1FB0002B5C04 /* Realm */,
 			);
 			productName = "cat-breed-finder";
 			productReference = 7F531AD126BF2403002106E2 /* cat-breed-finder.app */;
@@ -336,6 +342,7 @@
 			mainGroup = 7F531AC826BF2403002106E2;
 			packageReferences = (
 				7F4BAA7826C887D60047F127 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				7F78868726CA1FB0002B5C04 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 7F531AD226BF2403002106E2 /* Products */;
 			projectDirPath = "";
@@ -603,6 +610,14 @@
 				minimumVersion = 5.11.1;
 			};
 		};
+		7F78868726CA1FB0002B5C04 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -610,6 +625,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F4BAA7826C887D60047F127 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
+		};
+		7F78868826CA1FB0002B5C04 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F78868726CA1FB0002B5C04 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+		7F78868A26CA1FB0002B5C04 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F78868726CA1FB0002B5C04 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
