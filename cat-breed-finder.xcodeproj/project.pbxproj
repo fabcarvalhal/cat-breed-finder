@@ -37,6 +37,8 @@
 		7F531AFB26BF27B8002106E2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF126BF27B8002106E2 /* Result.swift */; };
 		7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */; };
 		7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */; };
+		7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */; };
+		7FCAAB7E26C9FB9300A84349 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCAAB7D26C9FB9300A84349 /* BarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		7F531AF126BF27B8002106E2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsViewController.swift; sourceTree = "<group>"; };
+		7FCAAB7D26C9FB9300A84349 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 		7F531B0126BF28B2002106E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7FCAAB7B26C9FB7200A84349 /* BarView */,
 				7F4BAA7E26C89B960047F127 /* Cells */,
 				7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */,
 			);
@@ -243,6 +248,7 @@
 		7F531B0326BF28D3002106E2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7FCAAB7326C9F94800A84349 /* BreedDetails */,
 				7F13F22D26C8622B001652C2 /* BreedList */,
 				7F13F21426C85378001652C2 /* CatFinder */,
 				7F13F20F26C84BFE001652C2 /* TabBarController */,
@@ -264,6 +270,22 @@
 				7F531AE226BF2404002106E2 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FCAAB7326C9F94800A84349 /* BreedDetails */ = {
+			isa = PBXGroup;
+			children = (
+				7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */,
+			);
+			path = BreedDetails;
+			sourceTree = "<group>";
+		};
+		7FCAAB7B26C9FB7200A84349 /* BarView */ = {
+			isa = PBXGroup;
+			children = (
+				7FCAAB7D26C9FB9300A84349 /* BarView.swift */,
+			);
+			path = BarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +383,8 @@
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
 				7F13F23526C869CE001652C2 /* UIViewController+.swift in Sources */,
 				7F531AF626BF27B8002106E2 /* BaseApiClient.swift in Sources */,
+				7FCAAB7E26C9FB9300A84349 /* BarView.swift in Sources */,
+				7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */,
 				7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */,
 				7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */,
 				7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */,

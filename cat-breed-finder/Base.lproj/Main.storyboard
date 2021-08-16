@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,27 +39,369 @@
                     <navigationItem key="navigationItem" title="Breeds" largeTitleDisplayMode="always" id="KOf-kb-7js"/>
                     <connections>
                         <outlet property="tableView" destination="AmF-JS-c0J" id="1DP-qf-oeG"/>
+                        <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="2sh-sh-yWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpB-DA-dhk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1605.7971014492755" y="-595.3125"/>
         </scene>
-        <!--View Controller-->
+        <!--Breed Details View Controller-->
         <scene sceneID="lyk-8l-QYT">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="O2T-Z6-9RW" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="O2T-Z6-9RW" customClass="BreedDetailsViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yfm-qZ-q8h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tAs-he-O56">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvl-Qh-p9S">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1228"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MonochromeTestImage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="XWW-Bd-mbx">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="242.5"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdY-AY-XjN" userLabel="Breed Name Label">
+                                                <rect key="frame" x="16" y="257.5" width="318" height="31.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yrQ-gp-rh2">
+                                                <rect key="frame" x="350" y="249" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="bV2-6j-tlH"/>
+                                                    <constraint firstAttribute="width" constant="48" id="wmg-XJ-UtV"/>
+                                                </constraints>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
+                                                </state>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwC-eg-xnR" userLabel="OriginView">
+                                                <rect key="frame" x="16" y="289" width="47" height="22.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-Tm-WMs" userLabel="Origin Label">
+                                                        <rect key="frame" x="8" y="4" width="31" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="3ht-Tm-WMs" secondAttribute="trailing" constant="8" id="9mA-iz-kTz"/>
+                                                    <constraint firstItem="3ht-Tm-WMs" firstAttribute="leading" secondItem="WwC-eg-xnR" secondAttribute="leading" constant="8" id="KaY-uA-2Ou"/>
+                                                    <constraint firstAttribute="bottom" secondItem="3ht-Tm-WMs" secondAttribute="bottom" constant="4" id="MsS-jY-sc7"/>
+                                                    <constraint firstItem="3ht-Tm-WMs" firstAttribute="top" secondItem="WwC-eg-xnR" secondAttribute="top" constant="4" id="Sfz-Md-hnl"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIL-dh-jHy" userLabel="Weight Label">
+                                                <rect key="frame" x="16" y="319.5" width="35.5" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-ze-8Dd" userLabel="Breed Description Label">
+                                                <rect key="frame" x="16" y="360.5" width="382" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" systemColor="secondaryLabelColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4NS-5V-G4d">
+                                                <rect key="frame" x="16" y="416" width="382" height="788"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characteristics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7iY-4P-xPP" userLabel="Characteristics Title Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="25.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Dcv-Tg-RPr" userLabel="Affection">
+                                                        <rect key="frame" x="0.0" y="33.5" width="382" height="62"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Affection Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uST-B3-cF5" userLabel="Affection Level">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="18"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdW-Q5-bqm" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="22" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Hro-b9-DG1"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EqZ-cs-keJ" userLabel="Adaptability">
+                                                        <rect key="frame" x="0.0" y="103.5" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adaptability" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUN-tb-0XX" userLabel="Adaptability">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDE-rH-3MW" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="3db-jA-ISK"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="COk-Jd-6Jb" userLabel="Dog friendly">
+                                                        <rect key="frame" x="0.0" y="172.5" width="382" height="63.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dog Friendly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-M6-4fT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="19.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dm-qg-DmM" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="23.5" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="fgE-sx-dFh"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="vR2-wG-RNf" userLabel="Energy ">
+                                                        <rect key="frame" x="0.0" y="244" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Energy Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="maC-1G-smb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uvy-Fq-Sn0" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="1LC-AF-Jdm"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gLg-nd-6GR" userLabel="Intelligence">
+                                                        <rect key="frame" x="0.0" y="313" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJO-2q-NYR">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wbF-te-d5U" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="JJC-44-aGH"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="mKM-Ce-EH9" userLabel="Shedding">
+                                                        <rect key="frame" x="0.0" y="382" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shedding" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6g-0B-ns3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNp-ad-Q9j" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="aKR-KX-HU0"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8dv-MJ-R5Z" userLabel="Social needs">
+                                                        <rect key="frame" x="0.0" y="451" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Social Needs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeZ-ha-dgj">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwn-GF-Bnq" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="df5-Aq-aKE"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LqZ-Pu-B5p" userLabel="Child friendly">
+                                                        <rect key="frame" x="0.0" y="520" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Child Friendly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yZR-QS-RBG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-Zb-d2v" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="ymq-3L-rGV"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8kA-EH-Hjf" userLabel="Healtth Issues">
+                                                        <rect key="frame" x="0.0" y="589" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Health Issues" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1g-jj-I4m">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOK-kp-DdF" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="TWx-uT-TNE"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OHN-Jn-dFF" userLabel="Stranger Friendly">
+                                                        <rect key="frame" x="0.0" y="658" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stranger Friendly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvr-ld-Zpy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iap-sf-chm" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="vhy-gv-N5G"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Ln0-bo-12D" userLabel="Grooming Level">
+                                                        <rect key="frame" x="0.0" y="727" width="382" height="61"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grooming Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-Md-9ad">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpp-MM-RWU" customClass="BarView" customModule="cat_breed_finder" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="21" width="382" height="40"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="TbF-dO-WbF"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QiR-aR-SfY" userLabel="Life span label">
+                                                <rect key="frame" x="80" y="319.5" width="35.5" height="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="yrQ-gp-rh2" secondAttribute="trailing" constant="16" id="1Md-4G-Dy0"/>
+                                            <constraint firstItem="sdY-AY-XjN" firstAttribute="top" secondItem="XWW-Bd-mbx" secondAttribute="bottom" constant="15" id="1a2-Dh-Syi"/>
+                                            <constraint firstItem="yrQ-gp-rh2" firstAttribute="centerY" secondItem="sdY-AY-XjN" secondAttribute="centerY" id="4P5-fg-VPK"/>
+                                            <constraint firstItem="4NS-5V-G4d" firstAttribute="top" secondItem="U3F-ze-8Dd" secondAttribute="bottom" constant="36" id="9a7-s9-gnM"/>
+                                            <constraint firstItem="4NS-5V-G4d" firstAttribute="leading" secondItem="cvl-Qh-p9S" secondAttribute="leading" constant="16" id="AA1-fG-cay"/>
+                                            <constraint firstItem="XWW-Bd-mbx" firstAttribute="leading" secondItem="cvl-Qh-p9S" secondAttribute="leading" id="BvK-IE-DlI"/>
+                                            <constraint firstItem="U3F-ze-8Dd" firstAttribute="leading" secondItem="cvl-Qh-p9S" secondAttribute="leading" constant="16" id="DLO-13-r02"/>
+                                            <constraint firstItem="U3F-ze-8Dd" firstAttribute="top" secondItem="HIL-dh-jHy" secondAttribute="bottom" constant="24" id="FVH-SW-SJd"/>
+                                            <constraint firstAttribute="bottom" secondItem="4NS-5V-G4d" secondAttribute="bottom" constant="24" id="Ich-ND-U6Q"/>
+                                            <constraint firstItem="QiR-aR-SfY" firstAttribute="leading" secondItem="HIL-dh-jHy" secondAttribute="trailing" constant="28.5" id="M6z-1q-wOo"/>
+                                            <constraint firstItem="XWW-Bd-mbx" firstAttribute="top" secondItem="cvl-Qh-p9S" secondAttribute="top" id="MpX-iu-jcK"/>
+                                            <constraint firstAttribute="trailing" secondItem="U3F-ze-8Dd" secondAttribute="trailing" constant="16" id="RX4-Ip-kze"/>
+                                            <constraint firstAttribute="trailing" secondItem="4NS-5V-G4d" secondAttribute="trailing" constant="16" id="ebu-lH-wqS"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QiR-aR-SfY" secondAttribute="trailing" constant="16" id="f7D-46-pJP"/>
+                                            <constraint firstItem="yrQ-gp-rh2" firstAttribute="leading" secondItem="sdY-AY-XjN" secondAttribute="trailing" constant="16" id="fey-hJ-vdW"/>
+                                            <constraint firstItem="sdY-AY-XjN" firstAttribute="leading" secondItem="cvl-Qh-p9S" secondAttribute="leading" constant="16" id="igj-nt-kfP"/>
+                                            <constraint firstItem="WwC-eg-xnR" firstAttribute="leading" secondItem="cvl-Qh-p9S" secondAttribute="leading" constant="16" id="io6-Nu-PsR"/>
+                                            <constraint firstItem="QiR-aR-SfY" firstAttribute="top" secondItem="HIL-dh-jHy" secondAttribute="top" id="mlU-9y-OJr"/>
+                                            <constraint firstAttribute="trailing" secondItem="XWW-Bd-mbx" secondAttribute="trailing" id="rs7-S5-QuD"/>
+                                            <constraint firstItem="HIL-dh-jHy" firstAttribute="top" secondItem="WwC-eg-xnR" secondAttribute="bottom" constant="8" id="ubU-uL-Jaa"/>
+                                            <constraint firstItem="HIL-dh-jHy" firstAttribute="leading" secondItem="cvl-Qh-p9S" secondAttribute="leading" constant="16" id="wOc-R3-thh"/>
+                                            <constraint firstItem="WwC-eg-xnR" firstAttribute="top" secondItem="sdY-AY-XjN" secondAttribute="bottom" id="ygs-Tv-Q2p"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cvl-Qh-p9S" firstAttribute="leading" secondItem="tAs-he-O56" secondAttribute="leading" id="DCh-ne-aCc"/>
+                                    <constraint firstAttribute="trailing" secondItem="cvl-Qh-p9S" secondAttribute="trailing" id="KAG-Vd-u35"/>
+                                    <constraint firstAttribute="bottom" secondItem="cvl-Qh-p9S" secondAttribute="bottom" id="yk0-zh-keS"/>
+                                    <constraint firstItem="cvl-Qh-p9S" firstAttribute="top" secondItem="tAs-he-O56" secondAttribute="top" id="zfM-8c-F5U"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="ykf-qm-2WF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tAs-he-O56" firstAttribute="leading" secondItem="ykf-qm-2WF" secondAttribute="leading" id="2dl-t9-Oxg"/>
+                            <constraint firstItem="cvl-Qh-p9S" firstAttribute="width" secondItem="yfm-qZ-q8h" secondAttribute="width" id="CRa-vV-x9j"/>
+                            <constraint firstItem="ykf-qm-2WF" firstAttribute="trailing" secondItem="tAs-he-O56" secondAttribute="trailing" id="DYP-e0-y0C"/>
+                            <constraint firstItem="XWW-Bd-mbx" firstAttribute="height" secondItem="yfm-qZ-q8h" secondAttribute="height" multiplier="0.3" id="MPG-xe-hD1"/>
+                            <constraint firstItem="ykf-qm-2WF" firstAttribute="bottom" secondItem="tAs-he-O56" secondAttribute="bottom" id="VkG-bR-dBd"/>
+                            <constraint firstItem="tAs-he-O56" firstAttribute="top" secondItem="ykf-qm-2WF" secondAttribute="top" id="hi4-be-TDA"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vTb-Tv-xHD"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="vTb-Tv-xHD"/>
+                    <connections>
+                        <outlet property="adaptabilityLevelBarView" destination="WDE-rH-3MW" id="jnD-Sm-mPg"/>
+                        <outlet property="affectionLevelBarView" destination="YdW-Q5-bqm" id="5Ra-r9-Wqq"/>
+                        <outlet property="breedDescriptionLabel" destination="U3F-ze-8Dd" id="MiV-Hs-Tov"/>
+                        <outlet property="breedNameLabel" destination="sdY-AY-XjN" id="12X-cn-nnc"/>
+                        <outlet property="breedWeightLabel" destination="HIL-dh-jHy" id="N49-1l-3LZ"/>
+                        <outlet property="catImageView" destination="XWW-Bd-mbx" id="fL5-Ko-XUd"/>
+                        <outlet property="characteristicsLabel" destination="7iY-4P-xPP" id="RPv-1O-Odw"/>
+                        <outlet property="characteristicsStackView" destination="4NS-5V-G4d" id="f3R-vK-wMO"/>
+                        <outlet property="childFriendlyLevelBarView" destination="XaI-Zb-d2v" id="scy-uj-phb"/>
+                        <outlet property="dogFriendlyLevelBarView" destination="9Dm-qg-DmM" id="0D6-UR-MdN"/>
+                        <outlet property="energyLevelBarView" destination="uvy-Fq-Sn0" id="Jmp-eX-YzW"/>
+                        <outlet property="favouriteButton" destination="yrQ-gp-rh2" id="dQT-FO-SWm"/>
+                        <outlet property="groomingLevelBarView" destination="hpp-MM-RWU" id="pbH-qB-W6N"/>
+                        <outlet property="healthIssuesLevelBarView" destination="MOK-kp-DdF" id="YSs-yz-D3Y"/>
+                        <outlet property="intelligenceLevelBarView" destination="wbF-te-d5U" id="od5-9G-mED"/>
+                        <outlet property="lifeSpanLabel" destination="QiR-aR-SfY" id="YWG-h1-GTI"/>
+                        <outlet property="originLabel" destination="3ht-Tm-WMs" id="xg9-cQ-uAv"/>
+                        <outlet property="sheddingLevelBarView" destination="gNp-ad-Q9j" id="ZBu-mG-n9e"/>
+                        <outlet property="socialNeedsLevelBarView" destination="bwn-GF-Bnq" id="NHF-cr-XYX"/>
+                        <outlet property="strangerFriendlyLevelBarView" destination="iap-sf-chm" id="tIg-R8-BmG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWG-cw-zH3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3172" y="128"/>
+            <point key="canvasLocation" x="3171.0144927536235" y="127.90178571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2eU-dK-k8D">
@@ -98,7 +441,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tLY-SI-Lpg"/>
                     <connections>
-                        <segue destination="O2T-Z6-9RW" kind="show" id="eTf-p7-eY9"/>
+                        <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="eTf-p7-eY9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VT5-DF-VO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -117,7 +460,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="aEM-kb-6mI"/>
                     <connections>
-                        <segue destination="O2T-Z6-9RW" kind="show" id="6Eh-ir-Yfa"/>
+                        <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="6Eh-ir-Yfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkN-Zs-1Du" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -193,13 +536,24 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eTf-p7-eY9"/>
+        <segue reference="6Eh-ir-Yfa"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="MonochromeTestImage.jpg" width="123.75" height="90.75"/>
         <image name="button" width="50" height="50"/>
         <image name="list.dash" catalog="system" width="128" height="85"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

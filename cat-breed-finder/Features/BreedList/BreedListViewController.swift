@@ -41,11 +41,13 @@ final class BreedListViewController: UIViewController {
         case error(message: String)
     }
     
-    lazy var presenter: BreedListPresenterInterface = {
+    private lazy var presenter: BreedListPresenterInterface = {
         let presenter = BreedListPresenter()
         presenter.view = self
         return presenter
     }()
+    
+    private let breedDetailSegueIdentifier = "showBreedDetailsSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,7 +105,7 @@ extension BreedListViewController: UITableViewDataSource {
 extension BreedListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: breedDetailSegueIdentifier, sender: presenter.breedOutput[indexPath.row])
     }
 }
 
