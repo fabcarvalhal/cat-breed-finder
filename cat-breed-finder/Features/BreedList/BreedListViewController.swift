@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 protocol BreedListViewControllerInterface: AnyObject {
     
@@ -92,13 +91,7 @@ extension BreedListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CatBreedCell.identifier, for: indexPath)
         guard let breedCell = cell as? CatBreedCell else { return cell }
-        let item = presenter.breedOutput[indexPath.row]
-        let imageUrl = item.image?.url ?? ""
-        breedCell
-            .catImageView
-            .sd_setImage(with: URL(string: imageUrl),
-                         placeholderImage: UIImage(named: "placeholder"))
-        breedCell.titleLabel.text = item.name
+        breedCell.set(viewModel: presenter.breedOutput[indexPath.row])
         return breedCell
     }
     

@@ -9,7 +9,7 @@ import Foundation
 
 protocol BreedListPresenterInterface: AnyObject {
     
-    var breedOutput: [CatBreed] { get }
+    var breedOutput: [CatBreedCellViewModel] { get }
     
     func loadBreeds()
     func loadMore()
@@ -27,11 +27,14 @@ final class BreedListPresenter: BreedListPresenterInterface {
     private var hasMorePages = true
     private var isLoading = false
     
-    var breedOutput: [CatBreed] {
+    var breedOutput: [CatBreedCellViewModel] {
         if !breedQuery.isEmpty {
-            return breedList.filter { $0.name.contains(self.breedQuery) }
+            return breedList
+                .filter { $0.name.contains(self.breedQuery) }
+                .map { CatBreedCellViewModel(photoUrl: URL(string: $0.image?.url ?? ""), breedName: $0.name) }
         }
         return breedList
+            .map { CatBreedCellViewModel(photoUrl: URL(string: $0.image?.url ?? ""), breedName: $0.name) }
     }
     
     private var breedList = [CatBreed]()
