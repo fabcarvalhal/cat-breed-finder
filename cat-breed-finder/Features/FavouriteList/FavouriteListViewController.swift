@@ -9,6 +9,7 @@ import UIKit
 
 protocol FavouriteListViewControllerInterface: AnyObject {
     
+    func displayError(message: String)
     func displayItems()
     func updateFavourites(deletions: [Int], insertions: [Int], modifications: [Int])
 }
@@ -68,6 +69,10 @@ extension FavouriteListViewController {
         breedCell.set(viewModel: presenter.breedListViewModels[indexPath.row])
         return breedCell
     }
+    
+    func displayError(message: String) {
+        showErrorAlert(message: message, title: "Error")
+    }
 }
 
 extension FavouriteListViewController {
@@ -75,5 +80,13 @@ extension FavouriteListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: breedDetailSegueIdentifier,
                      sender: presenter.getCompleteBreedInfo(on: indexPath.row))
+    }
+    
+    override func tableView(_ tableView: UITableView,
+                            commit editingStyle: UITableViewCell.EditingStyle,
+                            forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deleteItem(at: indexPath.row)
+        }
     }
 }

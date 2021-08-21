@@ -37,17 +37,23 @@ final class FavouriteListPresenter: FavouriteListPresenterInterface {
     }
     
     func deleteItem(at index: Int) {
-        
+        guard let fetchedResults = fetchedResults,
+              fetchedResults.indices.contains(index)
+        else { return }
+        do {
+            try realmManager.delete(objectWith: fetchedResults[index].id, of: RealmCatBreed.self)
+        } catch let error {
+            view?.displayError(message: error.localizedDescription)
+        }
     }
     
     func fetchFavourites() {
         do {
             let results = try realmManager.list(objectType: RealmCatBreed.self)
-            print(results)
             self.fetchedResults = results
             setupDataSourceNotification(on: results)
-        } catch {
-            print(error.localizedDescription)
+        } catch let error {
+            view?.displayError(message: error.localizedDescription)
         }
     }
     
@@ -59,7 +65,7 @@ final class FavouriteListPresenter: FavouriteListPresenterInterface {
             case .update(_, let deletions, let insertions, let modifications):
                 self?.view?.updateFavourites(deletions: deletions, insertions: insertions, modifications: modifications)
             case .error(let error):
-                print(error.localizedDescription)
+                self?.view?.displayError(message: error.localizedDescription)
             }
         }
     }
