@@ -16,7 +16,7 @@
 		7F06666C26D0929A0070B005 /* FavouriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */; };
 		7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */; };
 		7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21026C84C0B001652C2 /* TabBarController.swift */; };
-		7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21526C8538A001652C2 /* CatFinderViewController.swift */; };
+		7F13F21626C8538A001652C2 /* BreedFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21526C8538A001652C2 /* BreedFinderViewController.swift */; };
 		7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21B26C8599C001652C2 /* CatBreedListResponse.swift */; };
 		7F13F22026C85C28001652C2 /* CatBreedListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21F26C85C28001652C2 /* CatBreedListRequest.swift */; };
 		7F13F22326C85C62001652C2 /* DictionaryConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */; };
@@ -60,7 +60,7 @@
 		7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListPresenter.swift; sourceTree = "<group>"; };
 		7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButtonTabBar.swift; sourceTree = "<group>"; };
 		7F13F21026C84C0B001652C2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		7F13F21526C8538A001652C2 /* CatFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFinderViewController.swift; sourceTree = "<group>"; };
+		7F13F21526C8538A001652C2 /* BreedFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFinderViewController.swift; sourceTree = "<group>"; };
 		7F13F21B26C8599C001652C2 /* CatBreedListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedListResponse.swift; sourceTree = "<group>"; };
 		7F13F21F26C85C28001652C2 /* CatBreedListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreedListRequest.swift; sourceTree = "<group>"; };
 		7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryConvertible.swift; sourceTree = "<group>"; };
@@ -134,12 +134,12 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
-		7F13F21426C85378001652C2 /* CatFinder */ = {
+		7F13F21426C85378001652C2 /* BreedFinder */ = {
 			isa = PBXGroup;
 			children = (
-				7F13F21526C8538A001652C2 /* CatFinderViewController.swift */,
+				7F13F21526C8538A001652C2 /* BreedFinderViewController.swift */,
 			);
-			path = CatFinder;
+			path = BreedFinder;
 			sourceTree = "<group>";
 		};
 		7F13F21926C858DB001652C2 /* Request */ = {
@@ -290,7 +290,7 @@
 				7F06665826D0802F0070B005 /* FavouriteList */,
 				7FCAAB7326C9F94800A84349 /* BreedDetails */,
 				7F13F22D26C8622B001652C2 /* BreedList */,
-				7F13F21426C85378001652C2 /* CatFinder */,
+				7F13F21426C85378001652C2 /* BreedFinder */,
 				7F13F20F26C84BFE001652C2 /* TabBarController */,
 			);
 			path = Features;
@@ -427,7 +427,7 @@
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
 				7F163BAA26C9F2C200DB4E30 /* CatBreedCellViewModel.swift in Sources */,
 				7F06666826D0865B0070B005 /* RealmCatImage.swift in Sources */,
-				7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */,
+				7F13F21626C8538A001652C2 /* BreedFinderViewController.swift in Sources */,
 				7F06665626D072660070B005 /* BreedDetailsPresenter.swift in Sources */,
 				7F531AFA26BF27B8002106E2 /* ContentType.swift in Sources */,
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
