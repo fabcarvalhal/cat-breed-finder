@@ -10,11 +10,8 @@ import UIKit
 final class CatFinderViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var catImageView: UIImageView!
-    
-    @IBAction private func selectImageAction() {
-        present(createImagePickerAlert(), animated: true, completion: nil)
-    }
-    
+    @IBOutlet weak var breedNameLabel: UILabel!
+        
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -57,6 +54,14 @@ final class CatFinderViewController: UIViewController, UIImagePickerControllerDe
         imagePickerController.delegate = self
         imagePickerController.sourceType = source
         present(imagePickerController, animated: true)
+    }
+    
+    @IBAction func cancelAction() {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func selectImageAction() {
+        present(createImagePickerAlert(), animated: true, completion: nil)
     }
 }
 

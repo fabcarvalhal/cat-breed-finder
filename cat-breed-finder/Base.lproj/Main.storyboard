@@ -442,7 +442,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Enf-bk-AmT">
-                                <rect key="frame" x="16" y="137" width="382" height="266"/>
+                                <rect key="frame" x="57" y="137" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="AwY-GI-yJv"/>
+                                    <constraint firstAttribute="width" constant="300" id="bTp-Gb-P6O"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="150"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image and i'll try to figure out wich breed of cat is in the image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-SY-Aq3">
                                 <rect key="frame" x="16" y="48" width="382" height="53"/>
@@ -451,7 +460,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ek3-Ab-UYD">
-                                <rect key="frame" x="16" y="427" width="382" height="48"/>
+                                <rect key="frame" x="16" y="519" width="382" height="48"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="f34-Ea-mEd"/>
@@ -464,24 +473,38 @@
                                     <action selector="selectImageAction" destination="s5F-bI-s5A" eventType="touchUpInside" id="SIg-kU-0dB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXI-pG-aeq">
+                                <rect key="frame" x="16" y="461" width="382" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <color key="textColor" systemColor="systemBlueColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fCA-cE-vhA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Enf-bk-AmT" firstAttribute="top" secondItem="8JG-SY-Aq3" secondAttribute="bottom" constant="36" id="0kS-MJ-Xuu"/>
-                            <constraint firstItem="Ek3-Ab-UYD" firstAttribute="top" secondItem="Enf-bk-AmT" secondAttribute="bottom" constant="24" id="3YX-ip-Tem"/>
-                            <constraint firstItem="Enf-bk-AmT" firstAttribute="height" secondItem="UHF-R4-oMs" secondAttribute="height" multiplier="0.338422" id="GdH-8z-yg5"/>
+                            <constraint firstItem="Ek3-Ab-UYD" firstAttribute="top" secondItem="QXI-pG-aeq" secondAttribute="bottom" constant="29" id="FY0-jW-waB"/>
+                            <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="QXI-pG-aeq" secondAttribute="trailing" constant="16" id="JkL-yD-pcq"/>
+                            <constraint firstItem="QXI-pG-aeq" firstAttribute="top" secondItem="Enf-bk-AmT" secondAttribute="bottom" constant="24" id="M1q-7O-DsT"/>
                             <constraint firstItem="Ek3-Ab-UYD" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="S4n-xH-H9V"/>
-                            <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="Enf-bk-AmT" secondAttribute="trailing" constant="16" id="Zx4-kk-hAv"/>
+                            <constraint firstItem="QXI-pG-aeq" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="bzY-Fi-gUE"/>
+                            <constraint firstItem="Enf-bk-AmT" firstAttribute="centerX" secondItem="UHF-R4-oMs" secondAttribute="centerX" id="cZF-Tg-HGQ"/>
                             <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="8JG-SY-Aq3" secondAttribute="trailing" constant="16" id="drf-fb-axS"/>
                             <constraint firstItem="8JG-SY-Aq3" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="fvV-cf-5Qy"/>
                             <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="Ek3-Ab-UYD" secondAttribute="trailing" constant="16" id="ucJ-6D-kJK"/>
                             <constraint firstItem="8JG-SY-Aq3" firstAttribute="top" secondItem="fCA-cE-vhA" secondAttribute="top" constant="48" id="uol-od-Ep4"/>
-                            <constraint firstItem="Enf-bk-AmT" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="yN5-ud-hmi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Breed Finder" id="tLY-SI-Lpg"/>
+                    <navigationItem key="navigationItem" title="Breed Finder" id="tLY-SI-Lpg">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="cancel" id="MmL-Tg-PAK">
+                            <connections>
+                                <action selector="cancelAction" destination="s5F-bI-s5A" id="cdf-u2-mBZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="breedNameLabel" destination="QXI-pG-aeq" id="A4Q-nN-n16"/>
                         <outlet property="catImageView" destination="Enf-bk-AmT" id="8BE-G8-8bq"/>
                     </connections>
                 </viewController>
@@ -612,6 +635,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
