@@ -11,28 +11,30 @@ import RealmSwift
 protocol RealmManagerInterface: AnyObject {
     
     func save<T: Object>(_ object: T) throws
-    func list<T: Object>() -> Results<T>
+    func list<T: Object>(objectType: T.Type) throws -> Results<T>
     func delete<T: Object>(objectWith id: String, of type: T.Type) throws
 }
 
 final class RealmManager: RealmManagerInterface {
     
-    private let realmInstance: Realm
+    private var realmInstance: Realm!
     
-    init() throws {
+    func initializeRealm() throws {
         self.realmInstance = try Realm()
     }
     
-    func list<T: Object>() -> Results<T> {
-        realmInstance.objects(T.self)
+    func list<T: Object>(objectType: T.Type) throws -> Results<T> {
+        if realmInstance == nil { try initializeRealm() }
+        return realmInstance.objects(objectType.self)
     }
     
     func save<T>(_ object: T) throws {
+        if realmInstance == nil { try initializeRealm() }
         try realmInstance.write { object }
     }
     
     func delete<T: Object>(objectWith id: String, of type: T.Type) throws {
-        guard let object: T = list().filter(" id = %@", id).first else {
+        guard let object: T = try list(objectType: T.self).filter(" id = %@", id).first else {
             throw RealmManagerError.notFoundWhileDeleting
         }
         

@@ -10,9 +10,10 @@
 		7F06665626D072660070B005 /* BreedDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665526D072660070B005 /* BreedDetailsPresenter.swift */; };
 		7F06665A26D080520070B005 /* FavouriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665926D080520070B005 /* FavouriteListViewController.swift */; };
 		7F06665E26D081CC0070B005 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665D26D081CC0070B005 /* RealmManager.swift */; };
-		7F06666226D0853E0070B005 /* PersistedCatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666126D0853E0070B005 /* PersistedCatBreed.swift */; };
+		7F06666226D0853E0070B005 /* RealmCatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666126D0853E0070B005 /* RealmCatBreed.swift */; };
 		7F06666526D086520070B005 /* RealmCatWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666426D086520070B005 /* RealmCatWeight.swift */; };
 		7F06666826D0865B0070B005 /* RealmCatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666726D0865B0070B005 /* RealmCatImage.swift */; };
+		7F06666C26D0929A0070B005 /* FavouriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */; };
 		7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */; };
 		7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21026C84C0B001652C2 /* TabBarController.swift */; };
 		7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21526C8538A001652C2 /* CatFinderViewController.swift */; };
@@ -53,9 +54,10 @@
 		7F06665526D072660070B005 /* BreedDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsPresenter.swift; sourceTree = "<group>"; };
 		7F06665926D080520070B005 /* FavouriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListViewController.swift; sourceTree = "<group>"; };
 		7F06665D26D081CC0070B005 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
-		7F06666126D0853E0070B005 /* PersistedCatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistedCatBreed.swift; sourceTree = "<group>"; };
+		7F06666126D0853E0070B005 /* RealmCatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCatBreed.swift; sourceTree = "<group>"; };
 		7F06666426D086520070B005 /* RealmCatWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCatWeight.swift; sourceTree = "<group>"; };
 		7F06666726D0865B0070B005 /* RealmCatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCatImage.swift; sourceTree = "<group>"; };
+		7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListPresenter.swift; sourceTree = "<group>"; };
 		7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButtonTabBar.swift; sourceTree = "<group>"; };
 		7F13F21026C84C0B001652C2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7F13F21526C8538A001652C2 /* CatFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFinderViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				7F06665926D080520070B005 /* FavouriteListViewController.swift */,
+				7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */,
 			);
 			path = FavouriteList;
 			sourceTree = "<group>";
@@ -116,7 +119,7 @@
 		7F06665C26D0805D0070B005 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				7F06666126D0853E0070B005 /* PersistedCatBreed.swift */,
+				7F06666126D0853E0070B005 /* RealmCatBreed.swift */,
 				7F06666426D086520070B005 /* RealmCatWeight.swift */,
 				7F06666726D0865B0070B005 /* RealmCatImage.swift */,
 			);
@@ -418,6 +421,7 @@
 				7F531AF526BF27B8002106E2 /* RequestParams.swift in Sources */,
 				7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
+				7F06666C26D0929A0070B005 /* FavouriteListPresenter.swift in Sources */,
 				7F531AF426BF27B8002106E2 /* Endpoint.swift in Sources */,
 				7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */,
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
@@ -433,7 +437,7 @@
 				7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */,
 				7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */,
 				7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */,
-				7F06666226D0853E0070B005 /* PersistedCatBreed.swift in Sources */,
+				7F06666226D0853E0070B005 /* RealmCatBreed.swift in Sources */,
 				7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */,
 				7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */,
 				7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */,

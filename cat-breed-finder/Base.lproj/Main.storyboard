@@ -448,24 +448,27 @@
             </objects>
             <point key="canvasLocation" x="1606" y="128"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="sQ0-mL-5I8">
+        <!--Favourites-->
+        <scene sceneID="Ofv-NB-YBZ">
             <objects>
-                <viewController id="wh8-bW-2bc" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6W4-nx-rdk">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                <tableViewController title="Favourites" id="aYp-B8-7l5" customClass="FavouriteListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vRB-ro-SRd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="jog-0p-QWN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="aEM-kb-6mI"/>
+                        <connections>
+                            <outlet property="dataSource" destination="aYp-B8-7l5" id="aOH-jX-Ka5"/>
+                            <outlet property="delegate" destination="aYp-B8-7l5" id="R30-lW-FT1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="o6s-ls-Wt6"/>
                     <connections>
-                        <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="6Eh-ir-Yfa"/>
+                        <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="Oau-d6-nPW"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hkN-Zs-1Du" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0u9-s6-q0I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1684.057971014493" y="963.61607142857133"/>
+            <point key="canvasLocation" x="1826" y="931"/>
         </scene>
         <!--Breeds-->
         <scene sceneID="5Kn-Kb-pH8">
@@ -520,14 +523,14 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioo-mZ-WfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="07T-Yx-Ptb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jys-IH-urp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="jys-IH-urp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wh8-bW-2bc" kind="relationship" relationship="rootViewController" id="9P6-Ij-DIc"/>
+                        <segue destination="aYp-B8-7l5" kind="relationship" relationship="rootViewController" id="oG9-4g-xpn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cv-J5-l8C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -536,7 +539,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6Eh-ir-Yfa"/>
+        <segue reference="Oau-d6-nPW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="MonochromeTestImage.jpg" width="123.75" height="90.75"/>
