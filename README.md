@@ -20,3 +20,10 @@ Cat Breed Finder is an app created for the final project of the iOS Developer Na
 
 
 ### A small video showing how the app works : D
+
+
+
+### Dependencies (using swift package manager)
+
+- SDWebImage: load images, take care of lazyload images and the image cache
+- Realm: to save the user favourites
