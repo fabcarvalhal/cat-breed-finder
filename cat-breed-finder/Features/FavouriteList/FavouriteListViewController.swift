@@ -30,10 +30,6 @@ final class FavouriteListViewController: UITableViewController {
         tableView.register(UINib(nibName: "CatBreedCell", bundle: Bundle.main),
                            forCellReuseIdentifier: CatBreedCell.identifier)
         tableView.estimatedRowHeight = 120
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         presenter.fetchFavourites()
     }
     
