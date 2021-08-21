@@ -47,6 +47,11 @@
 		7F78868926CA1FB0002B5C04 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868826CA1FB0002B5C04 /* RealmSwift */; };
 		7F78868B26CA1FB0002B5C04 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868A26CA1FB0002B5C04 /* Realm */; };
 		7FC2479C26D1A32200DCD537 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC2479B26D1A32200DCD537 /* UserDefaultsManager.swift */; };
+		7FC247A126D1A81200DCD537 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC247A026D1A81200DCD537 /* TutorialViewController.swift */; };
+		7FC247A626D1AAC500DCD537 /* TutorialCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC247A526D1AAC500DCD537 /* TutorialCell.xib */; };
+		7FC247A926D1AFEF00DCD537 /* TutorialCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC247A826D1AFEF00DCD537 /* TutorialCell.swift */; };
+		7FC247AC26D1B08200DCD537 /* TutorialCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC247AB26D1B08200DCD537 /* TutorialCellViewModel.swift */; };
+		7FC247AF26D1B43400DCD537 /* TutorialPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC247AE26D1B43400DCD537 /* TutorialPresenter.swift */; };
 		7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */; };
 		7FCAAB7E26C9FB9300A84349 /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCAAB7D26C9FB9300A84349 /* BarView.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +96,11 @@
 		7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
 		7FC2479B26D1A32200DCD537 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		7FC247A026D1A81200DCD537 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		7FC247A526D1AAC500DCD537 /* TutorialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
+		7FC247A826D1AFEF00DCD537 /* TutorialCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCell.swift; sourceTree = "<group>"; };
+		7FC247AB26D1B08200DCD537 /* TutorialCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialCellViewModel.swift; sourceTree = "<group>"; };
+		7FC247AE26D1B43400DCD537 /* TutorialPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPresenter.swift; sourceTree = "<group>"; };
 		7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsViewController.swift; sourceTree = "<group>"; };
 		7FCAAB7D26C9FB9300A84349 /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -290,6 +300,7 @@
 		7F531B0326BF28D3002106E2 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7FC2479F26D1A80500DCD537 /* Tutorial */,
 				7F06665826D0802F0070B005 /* FavouriteList */,
 				7FCAAB7326C9F94800A84349 /* BreedDetails */,
 				7F13F22D26C8622B001652C2 /* BreedList */,
@@ -313,6 +324,26 @@
 				7F531AE226BF2404002106E2 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7FC2479F26D1A80500DCD537 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				7FC247A426D1AAB800DCD537 /* Views */,
+				7FC247A026D1A81200DCD537 /* TutorialViewController.swift */,
+				7FC247AE26D1B43400DCD537 /* TutorialPresenter.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		7FC247A426D1AAB800DCD537 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7FC247A526D1AAC500DCD537 /* TutorialCell.xib */,
+				7FC247A826D1AFEF00DCD537 /* TutorialCell.swift */,
+				7FC247AB26D1B08200DCD537 /* TutorialCellViewModel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		7FCAAB7326C9F94800A84349 /* BreedDetails */ = {
@@ -401,6 +432,7 @@
 				7F531AE126BF2404002106E2 /* LaunchScreen.storyboard in Resources */,
 				7F531ADE26BF2404002106E2 /* Assets.xcassets in Resources */,
 				7F531ADC26BF2403002106E2 /* Main.storyboard in Resources */,
+				7FC247A626D1AAC500DCD537 /* TutorialCell.xib in Resources */,
 				7F4BAA8326C89E780047F127 /* CatBreedCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,16 +448,19 @@
 				7F13F23226C862A5001652C2 /* BreedListPresenter.swift in Sources */,
 				7F13F22326C85C62001652C2 /* DictionaryConvertible.swift in Sources */,
 				7F531AF826BF27B8002106E2 /* URLRequester.swift in Sources */,
+				7FC247AC26D1B08200DCD537 /* TutorialCellViewModel.swift in Sources */,
 				7F13F22026C85C28001652C2 /* CatBreedListRequest.swift in Sources */,
 				7F06665E26D081CC0070B005 /* RealmManager.swift in Sources */,
 				7F06665A26D080520070B005 /* FavouriteListViewController.swift in Sources */,
 				7F13F22F26C8623C001652C2 /* BreedListViewController.swift in Sources */,
 				7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */,
 				7F531AF526BF27B8002106E2 /* RequestParams.swift in Sources */,
+				7FC247A126D1A81200DCD537 /* TutorialViewController.swift in Sources */,
 				7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
 				7F06666C26D0929A0070B005 /* FavouriteListPresenter.swift in Sources */,
 				7F531AF426BF27B8002106E2 /* Endpoint.swift in Sources */,
+				7FC247AF26D1B43400DCD537 /* TutorialPresenter.swift in Sources */,
 				7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */,
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
 				7F163BAA26C9F2C200DB4E30 /* CatBreedCellViewModel.swift in Sources */,
@@ -435,6 +470,7 @@
 				7F531AFA26BF27B8002106E2 /* ContentType.swift in Sources */,
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
 				7F13F23526C869CE001652C2 /* UIViewController+.swift in Sources */,
+				7FC247A926D1AFEF00DCD537 /* TutorialCell.swift in Sources */,
 				7F531AF626BF27B8002106E2 /* BaseApiClient.swift in Sources */,
 				7FCAAB7E26C9FB9300A84349 /* BarView.swift in Sources */,
 				7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */,

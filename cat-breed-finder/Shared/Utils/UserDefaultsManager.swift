@@ -16,6 +16,7 @@ protocol UserDefaultsManagerInterface: AnyObject {
     
     func save<T: Any>(_ value: T, for key: UserDefaultsKey)
     func delete(_ key: UserDefaultsKey)
+    func getValue<T>(for key: UserDefaultsKey) -> T?
 }
 
 final class UserDefaultsManager: UserDefaultsManagerInterface {
@@ -32,5 +33,9 @@ final class UserDefaultsManager: UserDefaultsManagerInterface {
     
     func delete(_ key: UserDefaultsKey) {
         userDefaults.removeObject(forKey: key.rawValue)
+    }
+    
+    func getValue<T>(for key: UserDefaultsKey) -> T? {
+        userDefaults.value(forKey: key.rawValue) as? T
     }
 }

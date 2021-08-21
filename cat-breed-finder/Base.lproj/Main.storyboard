@@ -410,7 +410,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="2eU-dK-k8D">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="qqi-US-NMD" customClass="TabBarController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qqi-US-NMD" customClass="TabBarController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qlf-DN-MO8" customClass="CenterButtonTabBar" customModule="cat_breed_finder" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -533,6 +533,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0u9-s6-q0I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1826" y="931"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="dn5-5R-SP4">
+            <objects>
+                <viewController storyboardIdentifier="TutorialViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xij-KZ-jsR" customClass="TutorialViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1YR-Ys-wBc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ydI-H9-SeR">
+                                <rect key="frame" x="0.0" y="68" width="414" height="646"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bwk-dJ-QJ7">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xij-KZ-jsR" id="3SY-ij-gYp"/>
+                                    <outlet property="delegate" destination="Xij-KZ-jsR" id="50O-uo-4Ed"/>
+                                </connections>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBb-Wh-du8">
+                                <rect key="frame" x="0.0" y="814" width="414" height="48"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="V5d-Fl-ecN"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="Previous" id="WmG-NA-hMd">
+                                        <connections>
+                                            <action selector="leftButtonAction" destination="Xij-KZ-jsR" id="xJc-3F-n6F"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Mca-4X-2A9"/>
+                                    <barButtonItem title="Item" id="BfP-H2-eL9">
+                                        <connections>
+                                            <action selector="rightButtonAction" destination="Xij-KZ-jsR" id="zmu-C1-NVc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="w8S-He-Cho">
+                                <rect key="frame" x="145.5" y="750" width="123" height="28"/>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pageControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i4F-c6-SKX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="w8S-He-Cho" firstAttribute="top" secondItem="ydI-H9-SeR" secondAttribute="bottom" constant="36" id="GzW-pm-ERC"/>
+                            <constraint firstItem="hBb-Wh-du8" firstAttribute="leading" secondItem="i4F-c6-SKX" secondAttribute="leading" id="JLL-ZT-E7b"/>
+                            <constraint firstItem="w8S-He-Cho" firstAttribute="centerX" secondItem="1YR-Ys-wBc" secondAttribute="centerX" id="Lq1-kh-cDV"/>
+                            <constraint firstItem="i4F-c6-SKX" firstAttribute="trailing" secondItem="ydI-H9-SeR" secondAttribute="trailing" id="RW8-5X-Be0"/>
+                            <constraint firstItem="ydI-H9-SeR" firstAttribute="top" secondItem="i4F-c6-SKX" secondAttribute="top" constant="24" id="aXB-vH-Bqv"/>
+                            <constraint firstItem="ydI-H9-SeR" firstAttribute="leading" secondItem="i4F-c6-SKX" secondAttribute="leading" id="avy-6u-pzY"/>
+                            <constraint firstItem="hBb-Wh-du8" firstAttribute="trailing" secondItem="i4F-c6-SKX" secondAttribute="trailing" id="c5C-TV-UbZ"/>
+                            <constraint firstItem="i4F-c6-SKX" firstAttribute="bottom" secondItem="hBb-Wh-du8" secondAttribute="bottom" id="jmW-VG-XBV"/>
+                            <constraint firstItem="hBb-Wh-du8" firstAttribute="top" secondItem="w8S-He-Cho" secondAttribute="bottom" constant="36" id="yxe-pX-6Nh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ydI-H9-SeR" id="JxL-iy-Qdd"/>
+                        <outlet property="leftButton" destination="WmG-NA-hMd" id="hjg-CV-UKe"/>
+                        <outlet property="pageControl" destination="w8S-He-Cho" id="DMp-KY-eVB"/>
+                        <outlet property="rightButton" destination="BfP-H2-eL9" id="BKe-RU-Knk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HlW-rQ-RZ8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1120.2898550724638" y="-726.5625"/>
         </scene>
         <!--Breeds-->
         <scene sceneID="5Kn-Kb-pH8">
