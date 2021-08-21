@@ -36,6 +36,12 @@ final class FavouriteListViewController: UITableViewController {
         super.viewWillAppear(animated)
         presenter.fetchFavourites()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? BreedDetailsViewController {
+            destination.presenter.breed = sender as? CatBreed
+        }
+    }
 }
 
 extension FavouriteListViewController: FavouriteListViewControllerInterface {
