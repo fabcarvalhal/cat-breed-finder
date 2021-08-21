@@ -8,6 +8,12 @@
 import UIKit
 import SDWebImage
 
+protocol BreedDetailsViewControllerInterface: AnyObject {
+    
+    func displayError(message: String)
+    func configureFavouriteButton()
+}
+
 final class BreedDetailsViewController: UIViewController {
     
     @IBOutlet private weak var catImageView: UIImageView! {
@@ -41,11 +47,16 @@ final class BreedDetailsViewController: UIViewController {
         }
     }
     
-    var presenter: BreedDetailsPresenterInterface = BreedDetailsPresenter()
+    lazy var presenter: BreedDetailsPresenterInterface = {
+        let presenter = BreedDetailsPresenter()
+        presenter.view = self
+        return presenter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         displayBreedMainInfo()
+        configureFavouriteButton()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,5 +111,21 @@ final class BreedDetailsViewController: UIViewController {
         
         strangerFriendlyLevelBarView
             .set(fillMode: BarView.FillMode(rawValue: breed.strangerFriendly))
+    }
+    
+    @IBAction func tapFavouriteButtonAction() {
+        presenter.toggleFavourite()
+    }
+}
+
+extension BreedDetailsViewController: BreedDetailsViewControllerInterface {
+    
+    func displayError(message: String) {
+        showErrorAlert(message: message, title: "Error")
+    }
+    
+    func configureFavouriteButton() {
+        let imageName = presenter.isFavourite ? "star.fill" : "star"
+        favouriteButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
 }

@@ -13,6 +13,7 @@ protocol RealmManagerInterface: AnyObject {
     func save<T: Object>(_ object: T) throws
     func list<T: Object>(objectType: T.Type) throws -> Results<T>
     func delete<T: Object>(objectWith id: String, of type: T.Type) throws
+    func getObject<T: Object>(by id: String, of type: T.Type) throws -> T?
 }
 
 final class RealmManager: RealmManagerInterface {
@@ -20,21 +21,23 @@ final class RealmManager: RealmManagerInterface {
     private var realmInstance: Realm!
     
     func initializeRealm() throws {
-        self.realmInstance = try Realm()
+        self.realmInstance = try Realm(configuration: .defaultConfiguration)
     }
     
     func list<T: Object>(objectType: T.Type) throws -> Results<T> {
         if realmInstance == nil { try initializeRealm() }
-        return realmInstance.objects(objectType.self)
+        return realmInstance.objects(objectType)
     }
     
-    func save<T>(_ object: T) throws {
+    func save<T: Object>(_ object: T) throws {
         if realmInstance == nil { try initializeRealm() }
-        try realmInstance.write { object }
+        try realmInstance.write {
+            realmInstance.add(object)
+        }
     }
     
     func delete<T: Object>(objectWith id: String, of type: T.Type) throws {
-        guard let object: T = try list(objectType: T.self).filter(" id = %@", id).first else {
+        guard let object: T = try getObject(by: id, of: type) else {
             throw RealmManagerError.notFoundWhileDeleting
         }
         
@@ -42,9 +45,16 @@ final class RealmManager: RealmManagerInterface {
             realmInstance.delete(object)
         }
     }
+    
+    func getObject<T: Object>(by id: String, of type: T.Type) throws -> T? {
+        if realmInstance == nil { try initializeRealm() }
+        return realmInstance.object(ofType: type, forPrimaryKey: id)
+    }
 }
 
 enum RealmManagerError: Error {
     
     case notFoundWhileDeleting
 }
+
+

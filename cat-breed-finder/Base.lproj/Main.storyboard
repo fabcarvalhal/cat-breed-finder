@@ -79,6 +79,9 @@
                                                 <state key="normal">
                                                     <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="tapFavouriteButtonAction" destination="O2T-Z6-9RW" eventType="touchUpInside" id="wWR-VJ-n7K"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WwC-eg-xnR" userLabel="OriginView">
                                                 <rect key="frame" x="16" y="289" width="47" height="22.5"/>
@@ -453,7 +456,7 @@
             <objects>
                 <tableViewController title="Favourites" id="aYp-B8-7l5" customClass="FavouriteListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vRB-ro-SRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -523,8 +526,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioo-mZ-WfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="07T-Yx-Ptb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="jys-IH-urp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jys-IH-urp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

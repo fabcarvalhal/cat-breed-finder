@@ -43,6 +43,7 @@ final class FavouriteListPresenter: FavouriteListPresenterInterface {
     func fetchFavourites() {
         do {
             let results = try realmManager.list(objectType: RealmCatBreed.self)
+            print(results)
             self.fetchedResults = results
             setupDataSourceNotification(on: results)
         } catch {
