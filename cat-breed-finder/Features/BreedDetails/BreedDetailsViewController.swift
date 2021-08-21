@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 final class BreedDetailsViewController: UIViewController {
     
-    @IBOutlet private weak var catImageView: UIImageView!
+    @IBOutlet private weak var catImageView: UIImageView! {
+        didSet {
+            catImageView.sd_imageTransition = .fade
+        }
+    }
+    
     @IBOutlet private weak var breedNameLabel: UILabel!
     @IBOutlet private weak var favouriteButton: UIButton!
     @IBOutlet private weak var breedDescriptionLabel: UILabel!
@@ -35,13 +41,64 @@ final class BreedDetailsViewController: UIViewController {
         }
     }
     
+    var presenter: BreedDetailsPresenterInterface = BreedDetailsPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        displayBreedMainInfo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        displayCharacteristicBarInfos()
     }
     
+    private func displayBreedMainInfo() {
+        catImageView.sd_setImage(with: URL(string: presenter.breed?.image?.url ?? ""),
+                                 placeholderImage: UIImage(named: "placeholder"),
+                                 options: [.scaleDownLargeImages, .progressiveLoad])
+        breedDescriptionLabel.text = presenter.breed?.description
+        breedNameLabel.text = presenter.breed?.name
+        if let weight = presenter.breed?.weight.imperial {
+            breedWeightLabel.text = String(format: "%@ inches", weight)
+        }
+        lifeSpanLabel.text = String(format: "Life span: %@", presenter.breed?.lifeSpan ?? "N/A")
+        originLabel.text = String(format: "Origin: %@", presenter.breed?.origin ?? "N/A")
+    }
+    
+    private func displayCharacteristicBarInfos() {
+        guard let breed = presenter.breed else { return }
+        adaptabilityLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.adaptability))
+        
+        affectionLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.affectionLevel))
+        
+        dogFriendlyLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.dogFriendly))
+        
+        energyLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.energyLevel))
+        
+        intelligenceLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.intelligence))
+        
+        sheddingLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.sheddingLevel))
+        
+        socialNeedsLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.socialNeeds))
+        
+        childFriendlyLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.childFriendly))
+        
+        groomingLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.grooming))
+        
+        healthIssuesLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.healthIssues))
+        
+        strangerFriendlyLevelBarView
+            .set(fillMode: BarView.FillMode(rawValue: breed.strangerFriendly))
+    }
 }

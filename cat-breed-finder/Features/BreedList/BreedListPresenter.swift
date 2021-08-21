@@ -14,6 +14,7 @@ protocol BreedListPresenterInterface: AnyObject {
     func loadBreeds()
     func loadMore()
     func searchBreed(by name: String)
+    func getCompleteBreedInfo(on index: Int) -> CatBreed?
 }
 
 final class BreedListPresenter: BreedListPresenterInterface {
@@ -102,5 +103,10 @@ final class BreedListPresenter: BreedListPresenterInterface {
                 work()
             }
         }
+    }
+    
+    func getCompleteBreedInfo(on index: Int) -> CatBreed? {
+        guard breedList.indices.contains(index) else { return nil }
+        return breedList[index]
     }
 }

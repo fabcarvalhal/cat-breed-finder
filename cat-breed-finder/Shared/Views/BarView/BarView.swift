@@ -12,13 +12,28 @@ final class BarView: UIView {
     @IBInspectable
     var barColor: UIColor = UIColor.systemBlue
     
-    enum FillMode: Float {
+    enum FillMode: Int {
         
-        case one = 0.2
-        case two = 0.4
-        case three = 0.6
-        case four = 0.8
-        case five = 1
+        case one = 1
+        case two = 2
+        case three = 3
+        case four = 4
+        case five = 5
+        
+        var barPercentage: CGFloat {
+            switch self {
+            case .one:
+                return 0.2
+            case .two:
+                return 0.4
+            case .three:
+                return 0.6
+            case .four:
+                return 0.8
+            case .five:
+                return 1
+            }
+        }
     }
     
     private var fillableBarView = UIView()
@@ -56,9 +71,10 @@ final class BarView: UIView {
         constraints.forEach { $0.isActive = true }
     }
     
-    func set(fillMode: FillMode) {
+    func set(fillMode: FillMode?) {
+        guard let mode = fillMode else { return }
         UIView.animate(withDuration: 0.4) {
-            self.fillableBarViewWidthConstraint?.constant = self.bounds.width * CGFloat(fillMode.rawValue)
+            self.fillableBarViewWidthConstraint?.constant = self.bounds.width * mode.barPercentage
             self.layoutIfNeeded()
         }
     }

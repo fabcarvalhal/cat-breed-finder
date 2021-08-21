@@ -58,6 +58,12 @@ final class BreedListViewController: UIViewController {
         super.viewDidAppear(animated)
         presenter.loadBreeds()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? BreedDetailsViewController {
+            destination.presenter.breed = sender as? CatBreed
+        }
+    }
 }
 
 extension BreedListViewController: BreedListViewControllerInterface {
@@ -105,7 +111,8 @@ extension BreedListViewController: UITableViewDataSource {
 extension BreedListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: breedDetailSegueIdentifier, sender: presenter.breedOutput[indexPath.row])
+        performSegue(withIdentifier: breedDetailSegueIdentifier,
+                     sender: presenter.getCompleteBreedInfo(on: indexPath.row))
     }
 }
 

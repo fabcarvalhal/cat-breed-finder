@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F06665626D072660070B005 /* BreedDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665526D072660070B005 /* BreedDetailsPresenter.swift */; };
 		7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */; };
 		7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21026C84C0B001652C2 /* TabBarController.swift */; };
 		7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21526C8538A001652C2 /* CatFinderViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F06665526D072660070B005 /* BreedDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsPresenter.swift; sourceTree = "<group>"; };
 		7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButtonTabBar.swift; sourceTree = "<group>"; };
 		7F13F21026C84C0B001652C2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7F13F21526C8538A001652C2 /* CatFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFinderViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				7FCAAB7426C9F95B00A84349 /* BreedDetailsViewController.swift */,
+				7F06665526D072660070B005 /* BreedDetailsPresenter.swift */,
 			);
 			path = BreedDetails;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
 				7F163BAA26C9F2C200DB4E30 /* CatBreedCellViewModel.swift in Sources */,
 				7F13F21626C8538A001652C2 /* CatFinderViewController.swift in Sources */,
+				7F06665626D072660070B005 /* BreedDetailsPresenter.swift in Sources */,
 				7F531AFA26BF27B8002106E2 /* ContentType.swift in Sources */,
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
 				7F13F23526C869CE001652C2 /* UIViewController+.swift in Sources */,
