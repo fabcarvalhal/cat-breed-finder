@@ -456,7 +456,7 @@
             <objects>
                 <tableViewController title="Favourites" id="aYp-B8-7l5" customClass="FavouriteListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vRB-ro-SRd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <connections>
@@ -464,7 +464,7 @@
                             <outlet property="delegate" destination="aYp-B8-7l5" id="R30-lW-FT1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="o6s-ls-Wt6"/>
+                    <navigationItem key="navigationItem" title="Favourites" id="o6s-ls-Wt6"/>
                     <connections>
                         <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="Oau-d6-nPW"/>
                     </connections>
@@ -526,10 +526,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ioo-mZ-WfR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="07T-Yx-Ptb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="jys-IH-urp">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" largeTitles="YES" id="jys-IH-urp">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
