@@ -28,6 +28,7 @@ final class BreedListViewController: UIViewController {
         controller.delegate = self
         controller.obscuresBackgroundDuringPresentation = false
         controller.searchBar.placeholder = "Search by breed name"
+        controller.searchBar.barStyle = .black
         return controller
     }()
     
@@ -51,12 +52,8 @@ final class BreedListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.searchController = searchController
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         presenter.loadBreeds()
+        navigationItem.searchController = searchController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
