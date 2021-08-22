@@ -513,10 +513,10 @@
             </objects>
             <point key="canvasLocation" x="1605.7971014492755" y="127.90178571428571"/>
         </scene>
-        <!--Favourites-->
+        <!--Favorites-->
         <scene sceneID="Ofv-NB-YBZ">
             <objects>
-                <tableViewController title="Favourites" id="aYp-B8-7l5" customClass="FavouriteListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Favorites" id="aYp-B8-7l5" customClass="FavouriteListViewController" customModule="cat_breed_finder" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vRB-ro-SRd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="756"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
