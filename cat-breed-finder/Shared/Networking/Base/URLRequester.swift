@@ -21,8 +21,8 @@ enum URLRequesterError: LocalizedError {
             return "An error occurred on the server"
         case .unauthorized:
             return "User not authorized, check your credentials and try again"
-        case .urlSessionError:
-            return "Error communication with the server"
+        case .urlSessionError(let error):
+            return error.localizedDescription
         }
     }
 }

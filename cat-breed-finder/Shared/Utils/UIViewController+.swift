@@ -19,14 +19,19 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
-    func hideLoading() {
+    func hideLoading(completion: (() -> Void)? = nil) {
         guard presentedViewController is UIAlertController else { return }
-        presentedViewController?.dismiss(animated: true, completion: nil)
+        presentedViewController?.dismiss(animated: true, completion: completion)
     }
     
-    func showErrorAlert(message: String, title: String) {
+    func showErrorAlert(message: String, title: String, tryAgainHandler: (() -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        if let tryAgainHandler = tryAgainHandler {
+            alert.addAction(UIAlertAction(title: "Try again", style: .default) { _ in
+                tryAgainHandler()
+            })
+        }
         present(alert, animated: true, completion: nil)
     }
 }

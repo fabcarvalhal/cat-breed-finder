@@ -76,8 +76,11 @@ extension BreedListViewController: BreedListViewControllerInterface {
             hideLoading()
             tableView.reloadData()
         case .error(let message):
-            hideLoading()
-            showErrorAlert(message: message, title: "Error")
+            hideLoading { [weak self] in
+                self?.showErrorAlert(message: message, title: "Error") {
+                    self?.presenter.loadBreeds()
+                }
+            }
         }
     }
     
@@ -114,7 +117,7 @@ extension BreedListViewController: UITableViewDelegate {
 }
 
 extension BreedListViewController: UISearchResultsUpdating, UISearchControllerDelegate {
-
+    
     func updateSearchResults(for searchController: UISearchController) {
         presenter.searchBreed(by: searchController.searchBar.text ?? String())
     }
