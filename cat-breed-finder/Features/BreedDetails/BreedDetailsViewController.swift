@@ -73,7 +73,7 @@ final class BreedDetailsViewController: UIViewController {
         if let weight = presenter.breed?.weight.imperial {
             breedWeightLabel.text = String(format: "%@ inches", weight)
         }
-        lifeSpanLabel.text = String(format: "Life span: %@", presenter.breed?.lifeSpan ?? "N/A")
+        lifeSpanLabel.text = String(format: "Life span: %@ years", presenter.breed?.lifeSpan ?? "N/A")
         originLabel.text = String(format: "Origin: %@", presenter.breed?.origin ?? "N/A")
     }
     
