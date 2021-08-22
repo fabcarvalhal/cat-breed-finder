@@ -441,60 +441,85 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Enf-bk-AmT">
-                                <rect key="frame" x="57" y="137" width="300" height="300"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjH-NH-gtU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="786"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejg-0Z-ddG">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="509"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="NVT-Fo-NSe">
+                                                <rect key="frame" x="57" y="85" width="300" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="LKk-ob-bpm"/>
+                                                    <constraint firstAttribute="height" constant="300" id="njh-K6-LEF"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="150"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcY-Px-JLX">
+                                                <rect key="frame" x="16" y="409" width="382" height="0.0"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-BX-ufz">
+                                                <rect key="frame" x="16" y="425" width="382" height="48"/>
+                                                <color key="backgroundColor" name="AccentColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="HZV-Y0-TVk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <state key="normal" title="Try it out!">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="selectImageAction" destination="s5F-bI-s5A" eventType="touchUpInside" id="Hjz-J5-rAN"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image and i'll try to figure out wich breed of cat is in the image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDs-uw-Vmb">
+                                                <rect key="frame" x="16" y="16" width="382" height="53"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dDs-uw-Vmb" secondAttribute="trailing" constant="16" id="0aW-gZ-ibI"/>
+                                            <constraint firstItem="NVT-Fo-NSe" firstAttribute="centerX" secondItem="ejg-0Z-ddG" secondAttribute="centerX" id="57B-qC-hvb"/>
+                                            <constraint firstItem="dDs-uw-Vmb" firstAttribute="leading" secondItem="ejg-0Z-ddG" secondAttribute="leading" constant="16" id="ACC-4B-ntE"/>
+                                            <constraint firstItem="PcY-Px-JLX" firstAttribute="leading" secondItem="ejg-0Z-ddG" secondAttribute="leading" constant="16" id="GLn-Gq-ccg"/>
+                                            <constraint firstAttribute="trailing" secondItem="PcY-Px-JLX" secondAttribute="trailing" constant="16" id="Lox-Pz-Pgq"/>
+                                            <constraint firstItem="PcY-Px-JLX" firstAttribute="top" secondItem="NVT-Fo-NSe" secondAttribute="bottom" constant="24" id="OP0-U5-Vbi"/>
+                                            <constraint firstItem="ODz-BX-ufz" firstAttribute="top" secondItem="PcY-Px-JLX" secondAttribute="bottom" constant="16" id="S2i-wJ-csA"/>
+                                            <constraint firstAttribute="bottom" secondItem="ODz-BX-ufz" secondAttribute="bottom" constant="36" id="cFg-6O-UDH"/>
+                                            <constraint firstItem="ODz-BX-ufz" firstAttribute="leading" secondItem="ejg-0Z-ddG" secondAttribute="leading" constant="16" id="hdf-OH-T0u"/>
+                                            <constraint firstItem="NVT-Fo-NSe" firstAttribute="top" secondItem="dDs-uw-Vmb" secondAttribute="bottom" constant="16" id="mVg-ed-YW4"/>
+                                            <constraint firstAttribute="trailing" secondItem="ODz-BX-ufz" secondAttribute="trailing" constant="16" id="rir-7G-KDP"/>
+                                            <constraint firstItem="dDs-uw-Vmb" firstAttribute="top" secondItem="ejg-0Z-ddG" secondAttribute="top" constant="16" id="w5t-UL-dh2"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="safeArea" id="7vw-rD-Xlj"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="AwY-GI-yJv"/>
-                                    <constraint firstAttribute="width" constant="300" id="bTp-Gb-P6O"/>
+                                    <constraint firstAttribute="trailing" secondItem="ejg-0Z-ddG" secondAttribute="trailing" id="X0j-Ut-tlG"/>
+                                    <constraint firstItem="ejg-0Z-ddG" firstAttribute="leading" secondItem="mjH-NH-gtU" secondAttribute="leading" id="q1o-LX-JhB"/>
+                                    <constraint firstAttribute="bottom" secondItem="ejg-0Z-ddG" secondAttribute="bottom" id="wh8-bh-JB2"/>
+                                    <constraint firstItem="ejg-0Z-ddG" firstAttribute="top" secondItem="mjH-NH-gtU" secondAttribute="top" id="yGN-C0-LhH"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="150"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select an image and i'll try to figure out wich breed of cat is in the image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-SY-Aq3">
-                                <rect key="frame" x="16" y="48" width="382" height="53"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ek3-Ab-UYD">
-                                <rect key="frame" x="16" y="497" width="382" height="48"/>
-                                <color key="backgroundColor" name="AccentColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="f34-Ea-mEd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                <state key="normal" title="Try it out!">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="selectImageAction" destination="s5F-bI-s5A" eventType="touchUpInside" id="rr3-ON-Je3"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXI-pG-aeq">
-                                <rect key="frame" x="16" y="461" width="382" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <color key="textColor" systemColor="systemBlueColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fCA-cE-vhA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Enf-bk-AmT" firstAttribute="top" secondItem="8JG-SY-Aq3" secondAttribute="bottom" constant="36" id="0kS-MJ-Xuu"/>
-                            <constraint firstItem="Ek3-Ab-UYD" firstAttribute="top" secondItem="QXI-pG-aeq" secondAttribute="bottom" constant="36" id="FY0-jW-waB"/>
-                            <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="QXI-pG-aeq" secondAttribute="trailing" constant="16" id="JkL-yD-pcq"/>
-                            <constraint firstItem="QXI-pG-aeq" firstAttribute="top" secondItem="Enf-bk-AmT" secondAttribute="bottom" constant="24" id="M1q-7O-DsT"/>
-                            <constraint firstItem="Ek3-Ab-UYD" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="S4n-xH-H9V"/>
-                            <constraint firstItem="QXI-pG-aeq" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="bzY-Fi-gUE"/>
-                            <constraint firstItem="Enf-bk-AmT" firstAttribute="centerX" secondItem="UHF-R4-oMs" secondAttribute="centerX" id="cZF-Tg-HGQ"/>
-                            <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="8JG-SY-Aq3" secondAttribute="trailing" constant="16" id="drf-fb-axS"/>
-                            <constraint firstItem="8JG-SY-Aq3" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" constant="16" id="fvV-cf-5Qy"/>
-                            <constraint firstItem="fCA-cE-vhA" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ek3-Ab-UYD" secondAttribute="bottom" id="nE6-zG-QEH"/>
-                            <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="Ek3-Ab-UYD" secondAttribute="trailing" constant="16" id="ucJ-6D-kJK"/>
-                            <constraint firstItem="8JG-SY-Aq3" firstAttribute="top" secondItem="fCA-cE-vhA" secondAttribute="top" constant="48" id="uol-od-Ep4"/>
+                            <constraint firstItem="fCA-cE-vhA" firstAttribute="trailing" secondItem="mjH-NH-gtU" secondAttribute="trailing" id="5Gy-RO-0Ix"/>
+                            <constraint firstItem="fCA-cE-vhA" firstAttribute="bottom" secondItem="mjH-NH-gtU" secondAttribute="bottom" id="5RR-4x-nHQ"/>
+                            <constraint firstItem="mjH-NH-gtU" firstAttribute="leading" secondItem="fCA-cE-vhA" secondAttribute="leading" id="Lvt-WN-kcw"/>
+                            <constraint firstItem="ejg-0Z-ddG" firstAttribute="width" secondItem="UHF-R4-oMs" secondAttribute="width" id="pkI-Z0-QWp"/>
+                            <constraint firstItem="mjH-NH-gtU" firstAttribute="top" secondItem="fCA-cE-vhA" secondAttribute="top" id="yLn-Su-L44"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Breed Finder" id="tLY-SI-Lpg">
@@ -505,8 +530,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="breedNameLabel" destination="QXI-pG-aeq" id="Z7h-p2-M0u"/>
-                        <outlet property="catImageView" destination="Enf-bk-AmT" id="TMY-5E-ZLf"/>
+                        <outlet property="breedNameLabel" destination="PcY-Px-JLX" id="3mM-I1-6jy"/>
+                        <outlet property="catImageView" destination="NVT-Fo-NSe" id="Mhs-77-84L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VT5-DF-VO6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
