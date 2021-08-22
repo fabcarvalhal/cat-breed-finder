@@ -31,6 +31,11 @@ final class BreedFinderViewController: UIViewController {
     @IBAction private func selectImageAction() {
         present(createImagePickerAlert(), animated: true, completion: nil)
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        catImageView.layer.cornerRadius = catImageView.bounds.height / 2
+    }
 }
 
 // MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
