@@ -14,6 +14,10 @@
 		7F06666526D086520070B005 /* RealmCatWeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666426D086520070B005 /* RealmCatWeight.swift */; };
 		7F06666826D0865B0070B005 /* RealmCatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666726D0865B0070B005 /* RealmCatImage.swift */; };
 		7F06666C26D0929A0070B005 /* FavouriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */; };
+		7F09D20D26D1D54B00085C08 /* ImageRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09D20C26D1D54B00085C08 /* ImageRecognizer.swift */; };
+		7F09D21126D1E13600085C08 /* ImageRecognizerManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09D21026D1E13600085C08 /* ImageRecognizerManagerError.swift */; };
+		7F09D21526D1E16500085C08 /* ClassificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09D21426D1E16500085C08 /* ClassificationResponse.swift */; };
+		7F09D21926D1E1AE00085C08 /* BreedFinderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F09D21826D1E1AE00085C08 /* BreedFinderPresenter.swift */; };
 		7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */; };
 		7F13F21126C84C0B001652C2 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21026C84C0B001652C2 /* TabBarController.swift */; };
 		7F13F21626C8538A001652C2 /* BreedFinderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F13F21526C8538A001652C2 /* BreedFinderViewController.swift */; };
@@ -44,6 +48,7 @@
 		7F531AFB26BF27B8002106E2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF126BF27B8002106E2 /* Result.swift */; };
 		7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */; };
 		7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */; };
+		7F75A48726D1EC9300712E24 /* CatBreedClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F75A48626D1EC9300712E24 /* CatBreedClassification.mlmodel */; };
 		7F78868926CA1FB0002B5C04 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868826CA1FB0002B5C04 /* RealmSwift */; };
 		7F78868B26CA1FB0002B5C04 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868A26CA1FB0002B5C04 /* Realm */; };
 		7FC2479C26D1A32200DCD537 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC2479B26D1A32200DCD537 /* UserDefaultsManager.swift */; };
@@ -64,6 +69,10 @@
 		7F06666426D086520070B005 /* RealmCatWeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCatWeight.swift; sourceTree = "<group>"; };
 		7F06666726D0865B0070B005 /* RealmCatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmCatImage.swift; sourceTree = "<group>"; };
 		7F06666B26D0929A0070B005 /* FavouriteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListPresenter.swift; sourceTree = "<group>"; };
+		7F09D20C26D1D54B00085C08 /* ImageRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognizer.swift; sourceTree = "<group>"; };
+		7F09D21026D1E13600085C08 /* ImageRecognizerManagerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRecognizerManagerError.swift; sourceTree = "<group>"; };
+		7F09D21426D1E16500085C08 /* ClassificationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationResponse.swift; sourceTree = "<group>"; };
+		7F09D21826D1E1AE00085C08 /* BreedFinderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFinderPresenter.swift; sourceTree = "<group>"; };
 		7F13F20C26C83C58001652C2 /* CenterButtonTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterButtonTabBar.swift; sourceTree = "<group>"; };
 		7F13F21026C84C0B001652C2 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7F13F21526C8538A001652C2 /* BreedFinderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFinderViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +104,7 @@
 		7F531AF126BF27B8002106E2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		7F75A48626D1EC9300712E24 /* CatBreedClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CatBreedClassification.mlmodel; sourceTree = "<group>"; };
 		7FC2479B26D1A32200DCD537 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		7FC247A026D1A81200DCD537 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		7FC247A526D1AAC500DCD537 /* TutorialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
@@ -150,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7F13F21526C8538A001652C2 /* BreedFinderViewController.swift */,
+				7F09D21826D1E1AE00085C08 /* BreedFinderPresenter.swift */,
 			);
 			path = BreedFinder;
 			sourceTree = "<group>";
@@ -269,6 +280,7 @@
 		7F531B0026BF28AC002106E2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7F09D20C26D1D54B00085C08 /* ImageRecognizer.swift */,
 				7F13F22226C85C62001652C2 /* DictionaryConvertible.swift */,
 				7F13F23426C869CE001652C2 /* UIViewController+.swift */,
 				7F06665D26D081CC0070B005 /* RealmManager.swift */,
@@ -293,6 +305,9 @@
 				7F06665C26D0805D0070B005 /* Persistence */,
 				7F13F21A26C858E3001652C2 /* Response */,
 				7F13F21926C858DB001652C2 /* Request */,
+				7F09D21426D1E16500085C08 /* ClassificationResponse.swift */,
+				7F09D21026D1E13600085C08 /* ImageRecognizerManagerError.swift */,
+				7F75A48626D1EC9300712E24 /* CatBreedClassification.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +478,7 @@
 				7FC247AF26D1B43400DCD537 /* TutorialPresenter.swift in Sources */,
 				7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */,
 				7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */,
+				7F09D21926D1E1AE00085C08 /* BreedFinderPresenter.swift in Sources */,
 				7F163BAA26C9F2C200DB4E30 /* CatBreedCellViewModel.swift in Sources */,
 				7F06666826D0865B0070B005 /* RealmCatImage.swift in Sources */,
 				7F13F21626C8538A001652C2 /* BreedFinderViewController.swift in Sources */,
@@ -471,8 +487,10 @@
 				7F531AF926BF27B8002106E2 /* HTTPMethod.swift in Sources */,
 				7F13F23526C869CE001652C2 /* UIViewController+.swift in Sources */,
 				7FC247A926D1AFEF00DCD537 /* TutorialCell.swift in Sources */,
+				7F09D20D26D1D54B00085C08 /* ImageRecognizer.swift in Sources */,
 				7F531AF626BF27B8002106E2 /* BaseApiClient.swift in Sources */,
 				7FCAAB7E26C9FB9300A84349 /* BarView.swift in Sources */,
+				7F09D21526D1E16500085C08 /* ClassificationResponse.swift in Sources */,
 				7FCAAB7526C9F95B00A84349 /* BreedDetailsViewController.swift in Sources */,
 				7F13F22B26C85DAA001652C2 /* TheCatApiEndpoint.swift in Sources */,
 				7F13F21C26C8599C001652C2 /* CatBreedListResponse.swift in Sources */,
@@ -481,8 +499,10 @@
 				7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */,
 				7FC2479C26D1A32200DCD537 /* UserDefaultsManager.swift in Sources */,
 				7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */,
+				7F75A48726D1EC9300712E24 /* CatBreedClassification.mlmodel in Sources */,
 				7F531AF726BF27B8002106E2 /* SimpleJSONHandler.swift in Sources */,
 				7F531AFB26BF27B8002106E2 /* Result.swift in Sources */,
+				7F09D21126D1E13600085C08 /* ImageRecognizerManagerError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,20 +7,46 @@
 
 import UIKit
 
-final class CatFinderViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+protocol BreedFinderViewControllerInterface: AnyObject {
+    
+    func showLoading(isLoading: Bool)
+    func displayBreedResult(_ result: String)
+}
+
+final class BreedFinderViewController: UIViewController {
     
     @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var breedNameLabel: UILabel!
         
+    private lazy var presenter: BreedFinderPresenterInterface = {
+        let presenter = BreedFinderPresenter()
+        presenter.view = self
+        return presenter
+    }()
+    
+    @IBAction func cancelAction() {
+        navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction private func selectImageAction() {
+        present(createImagePickerAlert(), animated: true, completion: nil)
+    }
+}
+
+// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
+extension BreedFinderViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate  {
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            catImageView.image = image
+        dismiss(animated: true) { [weak self] in
+            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                self?.catImageView.image = image
+                self?.presenter.classify(image: image)
+            }
         }
-        dismiss(animated: true, completion: nil)
     }
     
     private func createImagePickerAlert() -> UIAlertController {
@@ -55,13 +81,15 @@ final class CatFinderViewController: UIViewController, UIImagePickerControllerDe
         imagePickerController.sourceType = source
         present(imagePickerController, animated: true)
     }
-    
-    @IBAction func cancelAction() {
-        navigationController?.dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction private func selectImageAction() {
-        present(createImagePickerAlert(), animated: true, completion: nil)
-    }
 }
 
+extension BreedFinderViewController: BreedFinderViewControllerInterface {
+    
+    func showLoading(isLoading: Bool) {
+        isLoading ? displayLoading() : hideLoading()
+    }
+    
+    func displayBreedResult(_ result: String) {
+        breedNameLabel.text = result
+    }
+}
