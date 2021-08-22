@@ -48,7 +48,7 @@ final class ImageRecognizerManager: ImageRecognizerManagerInterface {
                 request.preferBackgroundProcessing = true
                 self?.proccessClassifications(for: request, error: error, completion: completion)
             }
-            request.imageCropAndScaleOption = .scaleFit
+            request.imageCropAndScaleOption = .centerCrop
             self.request = request
         }
         performRequest(for: ciImage, orientation: cgOrientation, completion: completion)
