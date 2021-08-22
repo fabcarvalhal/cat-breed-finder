@@ -526,7 +526,7 @@
                             <outlet property="delegate" destination="aYp-B8-7l5" id="R30-lW-FT1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Favourites" id="o6s-ls-Wt6"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="o6s-ls-Wt6"/>
                     <connections>
                         <segue destination="O2T-Z6-9RW" kind="show" identifier="showBreedDetailsSegue" id="Oau-d6-nPW"/>
                     </connections>
@@ -691,7 +691,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2sh-sh-yWa"/>
+        <segue reference="Oau-d6-nPW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="MonochromeTestImage.jpg" width="123.75" height="90.75"/>
