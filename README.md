@@ -28,3 +28,9 @@ https://user-images.githubusercontent.com/40077209/130341110-631238ba-247f-46f8-
 
 - SDWebImage: load images, take care of lazyload images and the image cache
 - Realm: to save the user favorites
+
+### Requirements
+
+- Xcode version: 12.4+
+- Swift 5
+- iOS: 14.4
