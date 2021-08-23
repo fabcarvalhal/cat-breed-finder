@@ -24,6 +24,12 @@ PS: The classification model here has a low accuracy since my computer couldn't 
 
 https://user-images.githubusercontent.com/40077209/130341110-631238ba-247f-46f8-b325-d5ba6c01b797.mp4
 
+
+### Current classes on mlmodel and training statistics
+
+<img width="596" alt="Captura de Tela 2021-08-23 às 12 07 56" src="https://user-images.githubusercontent.com/40077209/130473892-ccbc316c-26a8-442d-abcd-8e0ce8a75908.png">
+
+
 ### Dependencies (using swift package manager)
 
 - SDWebImage: load images, take care of lazyload images and the image cache
