@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F05E5DA26D3F02900E29448 /* CatBreedClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F05E5D926D3F02900E29448 /* CatBreedClassification.mlmodel */; };
 		7F06665626D072660070B005 /* BreedDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665526D072660070B005 /* BreedDetailsPresenter.swift */; };
 		7F06665A26D080520070B005 /* FavouriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665926D080520070B005 /* FavouriteListViewController.swift */; };
 		7F06665E26D081CC0070B005 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F06665D26D081CC0070B005 /* RealmManager.swift */; };
@@ -48,7 +49,6 @@
 		7F531AFB26BF27B8002106E2 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF126BF27B8002106E2 /* Result.swift */; };
 		7F531AFC26BF27B8002106E2 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */; };
 		7F531AFD26BF27B8002106E2 /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */; };
-		7F75A48726D1EC9300712E24 /* CatBreedClassification.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7F75A48626D1EC9300712E24 /* CatBreedClassification.mlmodel */; };
 		7F78868926CA1FB0002B5C04 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868826CA1FB0002B5C04 /* RealmSwift */; };
 		7F78868B26CA1FB0002B5C04 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 7F78868A26CA1FB0002B5C04 /* Realm */; };
 		7FC2479C26D1A32200DCD537 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC2479B26D1A32200DCD537 /* UserDefaultsManager.swift */; };
@@ -62,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7F05E5D926D3F02900E29448 /* CatBreedClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CatBreedClassification.mlmodel; sourceTree = "<group>"; };
 		7F06665526D072660070B005 /* BreedDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDetailsPresenter.swift; sourceTree = "<group>"; };
 		7F06665926D080520070B005 /* FavouriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteListViewController.swift; sourceTree = "<group>"; };
 		7F06665D26D081CC0070B005 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
@@ -104,7 +105,6 @@
 		7F531AF126BF27B8002106E2 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7F531AF226BF27B8002106E2 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 		7F531AF326BF27B8002106E2 /* HTTPHeaderField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
-		7F75A48626D1EC9300712E24 /* CatBreedClassification.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CatBreedClassification.mlmodel; sourceTree = "<group>"; };
 		7FC2479B26D1A32200DCD537 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		7FC247A026D1A81200DCD537 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		7FC247A526D1AAC500DCD537 /* TutorialCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutorialCell.xib; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 				7F13F21926C858DB001652C2 /* Request */,
 				7F09D21426D1E16500085C08 /* ClassificationResponse.swift */,
 				7F09D21026D1E13600085C08 /* ImageRecognizerManagerError.swift */,
-				7F75A48626D1EC9300712E24 /* CatBreedClassification.mlmodel */,
+				7F05E5D926D3F02900E29448 /* CatBreedClassification.mlmodel */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,6 +474,7 @@
 				7F13F22726C85CE7001652C2 /* TheCatApiClient.swift in Sources */,
 				7F531AD526BF2403002106E2 /* AppDelegate.swift in Sources */,
 				7F06666C26D0929A0070B005 /* FavouriteListPresenter.swift in Sources */,
+				7F05E5DA26D3F02900E29448 /* CatBreedClassification.mlmodel in Sources */,
 				7F531AF426BF27B8002106E2 /* Endpoint.swift in Sources */,
 				7FC247AF26D1B43400DCD537 /* TutorialPresenter.swift in Sources */,
 				7F4BAA8026C89BA50047F127 /* CatBreedCell.swift in Sources */,
@@ -499,7 +500,6 @@
 				7F13F20D26C83C58001652C2 /* CenterButtonTabBar.swift in Sources */,
 				7FC2479C26D1A32200DCD537 /* UserDefaultsManager.swift in Sources */,
 				7F531AD726BF2403002106E2 /* SceneDelegate.swift in Sources */,
-				7F75A48726D1EC9300712E24 /* CatBreedClassification.mlmodel in Sources */,
 				7F531AF726BF27B8002106E2 /* SimpleJSONHandler.swift in Sources */,
 				7F531AFB26BF27B8002106E2 /* Result.swift in Sources */,
 				7F09D21126D1E13600085C08 /* ImageRecognizerManagerError.swift in Sources */,
